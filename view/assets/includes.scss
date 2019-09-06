@@ -1,0 +1,14 @@
+/* Import css styles */
+
+/* common styles */
+@import "common/main.scss";
+@import "common/mediaquery.scss";
+
+/** Componenten 
+@import "components/test.scss";
+
+*/
+
+/*** Layouts*/
+@import "layouts/header.scss";
+@import "layouts/footer.scss";

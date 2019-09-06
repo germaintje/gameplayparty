@@ -1,157 +1,113 @@
 <?php
+require_once './model/ProductsLogic.php';
+require_once './utility/utility.php';
 
-require_once 'model/ProductsLogic.php';
-
-class ProductsController {
-    private $ProductsLogic;
-
-    public function __construct($dbName, $username, $pass, $serverAdress = "localhost", $dbType = "mysql" ) {
-        $this->ProductsLogic = new ProductsLogic($dbName, $username, $pass, $serverAdress, $dbType);
+class ProductsController
+{
+    public function __construct()
+    {
+        $this->ProductsLogic = new ProductsLogic();
+        $this->utility = new utility();
     }
 
-    public function __destruct() {
-        $this->ProductsLogic = NULL;
+    public function __destruct()
+    {
+        // TODO: Implement __destruct() method.
     }
 
-    public function handleRequest() {
+    public function handleRequest()
+    {
+        try {
+            $op = isset($_REQUEST['op']) ? $_REQUEST['op'] : NULL;
+            switch ($op) {
+                case 'create':
+                    if ($_POST['name'] == null) {
+                        include 'view/old/create.php';
+                    } else {
+                        $this->collectCreateContact($_REQUEST);
+                    }
+                    break;
+                case 'reads':
+                    $this->collectReadContacts();
+                    break;
+                case 'read':
+                    $this->collectReadContact($_REQUEST['id']);
+                    break;
+                case 'update':
+                    if ($_POST['name'] == null) {
+                        include 'view/old/update.php';
+                    } else {
+                        $this->collectUpdateContact($_POST['name'], $_POST['phone'], $_POST['email'], $_POST['address']);
+                    }
+                    break;
+                case 'delete':
+                    $this->collectDeleteContact($_REQUEST['id']);
+                    break;
+                case 'search':
+                    $output = $this->collectSearchContacts($_REQUEST["input"]);
+                    break;
+                case 'readpage':
+                    //get current starting point of records
+                    $item_per_page = 4;
+                    $position = (($_REQUEST['p']-1) * $item_per_page);
+                    $sql = "SELECT * FROM products LIMIT $position, $item_per_page";
+                    $result = $data->readsData($sql);
+                    $pages = $data->countPages('SELECT COUNT(*) FROM products');
+                    include (view/ViewProducts.php);
+                    break;
+                default:
+                    $this->collectReadContacts();
 
-        if (isset($_GET['op']) ) {
-            $op = $_GET['op'];
-
-        } else {
-            $op = "";
-        }
-
-        switch ($op) {
-            case 'create':
-                $this->collectCreateProducts();
-                break;
-
-            case 'update':
-                $this->collectUpdateProduct();
-                break;
-
-            case 'delete':
-                if (isset($_GET['id']) ) {
-                    $id = $_GET['id'];
-                    $this->collectDeleteProducts($id);
-                }
-                break;
-
-            case 'search':
-                $this->collectSearchProducts();
-                break;
-
-            default:
-                $this->collectReadProducts();
-                break;
-        }
-    }
-
-    // data gets extracted from the $_POST
-    public function collectCreateProducts() {
-        if ($this->ProductsLogic->TestDataSubmitted(1) ) {
-
-            // sumbit the form
-            $lastID = $this->ProductsLogic->CreateProduct();
-
-            // run a read
-            $_GET["id"] = $lastID;
-            $this->collectReadProducts();
-        } else {
-            // Show the form
-            $content = $this->ProductsLogic->GenerateCreateForm();
-            require_once 'view/create.php';
-        }
-    }
-
-    public function collectReadProducts() {
-        // run the read
-        if ( !empty($_GET["id"] ) && $_GET["id"] > -1 ) {
-
-            $content = $this->ProductsLogic->ReadSingleProduct($_GET["id"]);
-            require_once 'view/readSingle.php';
-
-        } else {
-            if ( !isset($_GET["page"]) ) {
-                $_GET["page"] = 1;
+                    break;
             }
-            $returnedArray = $this->ProductsLogic->ReadProduct($_GET["page"]);
-
-            $content = $returnedArray[0];
-            $pagination = $returnedArray[1];
-
-            require_once 'view/read.php';
+        } catch (ValidationException $e) {
+            $errors = $e->getErrors();
         }
+
     }
 
-    // private function collectSingleReadProduct($id) {
-    //     // run singleRead
-    //     $content = $this->ProductsLogic->ReadSingleProduct($id);
-    //     require_once 'view/readSingle.php';
-    // }
-
-    // not done
-    public function collectUpdateProduct() {
-
-        // check if Data is submitted
-        if ($this->ProductsLogic->TestDataSubmitted() ) {
-            // Run the update
-            $content = $this->ProductsLogic->UpdateProduct();
-            require_once 'view/readSingle.php';
-
-        // Check if There is an Id in the url
-    } else if ( isset($_GET["id"]) || isset($_POST['product_id']) ) {
-            // Set the id
-            if (isset($_GET["id"]) ) {
-                $id = $_GET['id'];
-            }
-
-            // if form is incorrectly filled set the id to post id
-            else {
-                $id = $_POST['product_id'];
-            }
-
-            // Show the form
-            $content = $this->ProductsLogic->GenerateUpdateForm($id);
-            require_once 'view/update.php';
-
-        } else {
-            // run a regular read
-            $_GET["id"] = -1;
-            $this->collectReadProducts();
-        }
+    public function collectCreateContact($request)
+    {
+        $products = $this->ProductsLogic->createContact($_POST['product_id'], $_POST['product_type_code'], $_POST['supplier_id'], $_POST['product_name'], $_POST['product_price'], $_POST['other_product_details']);
+        include 'view/old/create.php';
     }
 
-    public function collectDeleteProducts($id) {
-        // Run Delete
-        $result = $this->ProductsLogic->DeleteProduct($id);
-
-        // run Read
-        $_GET["id"] = -1;
-        $this->collectReadProducts();
+    public function collectUpdateContact()
+    {
+        include 'view/old/update.php';
     }
 
-    public function collectSearchProducts() {
+    public function collectReadContact($id)
+    {
 
-        if (isset($_REQUEST["search"]) ) {
-            if (isset($_GET["page"]) ) {
-                $page = $_GET["page"];
-            } else {
-                $page = 1;
-            }
+        $products = $this->ProductsLogic->readContact($id);
+        include 'view/ViewProducts.php';
 
-            $search = $_REQUEST["search"];
-            $returnedArray = $this->ProductsLogic->SearchProduct($search, $page);
 
-            $content = $returnedArray[0];
-            $pagination = $returnedArray[1];
-
-            require_once 'view/readSingle.php';
-
-        } else {
-            $this->collectReadProducts();
-        }
     }
+
+    public function collectReadContacts()
+    {
+        //$products = $this->ProductsLogic->readContacts();
+        //$result  = $this->utility->createTable($products);
+        include 'view/home.php';
+    }
+
+    public function collectDeleteContact($id)
+    {
+        //echo "Gebruiker is verwijderd";
+        $products = $this->ProductsLogic->deleteContact($id);
+        include 'view/old/delete.php';
+
+    }
+
+    public function collectSearchContacts($input){
+        $searchOutput = $this->ProductsLogic->searchContact($input);
+
+        $result = $this->utility->createTable($searchOutput);
+        include 'view/ViewProducts.php';
+
+
+    }
+
 }
- ?>

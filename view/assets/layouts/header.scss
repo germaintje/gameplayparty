@@ -1,0 +1,51 @@
+nav a{
+    float: right;
+}
+
+li{
+    display: inline;
+    padding: 5px;
+}
+
+.searchcreate nav {
+float: right
+}
+
+.searchcreate{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+form input, form{
+    display: inherit;
+    /*border-radius: 10px;*/
+    /*border: 1px solid black;*/
+
+}
+
+form  input[type='submit']{
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+fas{
+    background-color: transparent;
+}
+
+table{
+    width: 100%;
+    text-align: center;
+}
+
+a button{
+    border-radius: 10px;
+    color: #ffffff;
+    border: 1px solid black;
+    background-color: blue;
+    font-size: 25px;
+}
+
+
+
