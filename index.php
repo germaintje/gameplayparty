@@ -18,7 +18,7 @@
 <?php
 require_once 'controller/ProductsController.php';
 $productsController = new ProductsController("stardunks", "root", "");
-$productsController->handleRequest();
+$productsController->handleRequest(); 
 
 ?>
 </body>
