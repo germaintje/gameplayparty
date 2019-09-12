@@ -1,0 +1,13 @@
+.tijdentitle h2{
+    text-align: center;
+}
+
+.event{
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.eventrow{
+    margin-left: 50px !important;
+    margin-right: 50px !important;
+}
