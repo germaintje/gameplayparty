@@ -2,6 +2,8 @@
 
 include "header.php";
 
+echo $content;
+
 ?>
 
 <div class="container">

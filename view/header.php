@@ -36,10 +36,12 @@
                 <a class="nav-link" href="#">Link</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bioscopen</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="#">Action 1</a>
-                    <a class="dropdown-item" href="#">Action 2</a>
+                    <a class="dropdown-item" href="index.php?op=detail&id=1">Kinepolis Almere</a>
+                    <a class="dropdown-item" href="index.php?op=detail&id=2">Kinepolis Jaarbeurs Utrecht</a>
+                    <a class="dropdown-item" href="index.php?op=detail&id=3">Kinepolis Den Helder</a>
+
                 </div>
             </li>
         </ul>

@@ -27,6 +27,10 @@ class ProductsController
                         $this->collectCreateContact($_REQUEST);
                     }
                     break;
+                case 'detail':
+                    $this->showBioscoop($b_naam);
+                    break;
+
                 case 'reads':
                     $this->collectReadContacts();
                     break;
@@ -70,6 +74,12 @@ class ProductsController
     {
         $products = $this->ProductsLogic->createContact($_POST['product_id'], $_POST['product_type_code'], $_POST['supplier_id'], $_POST['product_name'], $_POST['product_price'], $_POST['other_product_details']);
         include 'view/old/create.php';
+    }
+
+    public function showBioscoop($b_naam){
+        $products = $this->ProductsLogic->showBioscoop($b_naam);
+        include 'view/bios_detail.php';
+
     }
 
     public function collectUpdateContact()

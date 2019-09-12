@@ -28,6 +28,12 @@ class DataHandler{
         $this->dbh = null;
     }
 
+    public function showBioscoop($sql){
+        var_dump($sql);
+        return $this->dbh->query($sql,PDO::FETCH_ASSOC);
+    }
+    
+
     public function createData($sql){
         return $this->dbh->query($sql);
     }
