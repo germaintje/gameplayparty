@@ -1,5 +1,5 @@
 <?php
-include 'view/old/header.php';
+include 'header.php';
 ?>
 
 <style>
