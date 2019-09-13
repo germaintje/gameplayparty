@@ -69,7 +69,7 @@ class ProductsLogic
         }
     }
 
-    public function showBioscoop($b_naam){
+    public function showBioscoop($id){
         try{
 
             $id = $_GET['id'];
@@ -77,8 +77,13 @@ class ProductsLogic
             $sql = "SELECT * FROM bioscopen WHERE b_naam_int=" . $id;
 
             $result = $this->DataHandler->showBioscoop($sql);
+            var_dump($result);
+
+            $result = $result->fetchAll();
+
 
             return $result;
+
 
         }catch(Exeption $e){
             throw $e;

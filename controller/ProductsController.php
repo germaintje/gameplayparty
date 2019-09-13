@@ -28,7 +28,7 @@ class ProductsController
                     }
                     break;
                 case 'detail':
-                    $this->showBioscoop($b_naam);
+                    $this->showBioscoop($_REQUEST['id']);
                     break;
 
                 case 'reads':
@@ -76,8 +76,8 @@ class ProductsController
         include 'view/old/create.php';
     }
 
-    public function showBioscoop($b_naam){
-        $products = $this->ProductsLogic->showBioscoop($b_naam);
+    public function showBioscoop($id){
+        $products = $this->ProductsLogic->showBioscoop($id);
         include 'view/bios_detail.php';
 
     }
