@@ -69,7 +69,7 @@ class ProductsLogic
         }
     }
 
-    public function showBioscoop($id){
+    public function showBioscoop($b_naam){
         try{
 
             $id = $_GET['id'];
@@ -77,13 +77,8 @@ class ProductsLogic
             $sql = "SELECT * FROM bioscopen WHERE b_naam_int=" . $id;
 
             $result = $this->DataHandler->showBioscoop($sql);
-            var_dump($result);
-
-            $result = $result->fetchAll();
-
 
             return $result;
-
 
         }catch(Exeption $e){
             throw $e;
@@ -107,11 +102,21 @@ class ProductsLogic
 
     public function searchContact($input){
         try{
-            $sql ="SELECT * FROM products
-WHERE product_name LIKE '%$input%'";
+            $sql ="SELECT * FROM products WHERE product_name LIKE '%$input%'";
             $result = $this->DataHandler->searchData($sql);
             return $result;
         }catch (Exception $e){
+            throw $e;
+        }
+    }
+
+    public function readHome(){
+        try{
+            $sql = "SELECT * FROM bioscopen ";
+            $result = $this->DataHandler->readHome($sql);
+
+            return $result;
+        }catch (Exception $e) {
             throw $e;
         }
     }

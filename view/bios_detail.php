@@ -2,10 +2,7 @@
 
 include "header.php";
 
-var_dump($products);
-
-
-
+echo $content;
 
 ?>
 
@@ -81,15 +78,17 @@ var_dump($products);
   </div>
   </div>
 
-  </div>
 
-  
+
+
+
+
+
+  </div>
 
 
 
 <?php
-
-
 
 include "footer.php";
 ?>

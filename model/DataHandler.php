@@ -71,5 +71,10 @@ class DataHandler{
         $pages = ceil($get_total_rows[0]/$item_per_page);
         return $pages;
     }
+    
+    public function readHome($sql){
+       // $this->query($sql);
+       //return $this->dbh->query($sql,PDO::FETCH_ASSOC);
+    }
 }
 ?>

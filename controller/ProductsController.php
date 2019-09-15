@@ -28,7 +28,7 @@ class ProductsController
                     }
                     break;
                 case 'detail':
-                    $this->showBioscoop($_REQUEST['id']);
+                    $this->showBioscoop($b_naam);
                     break;
 
                 case 'reads':
@@ -60,7 +60,7 @@ class ProductsController
                     include (view/ViewProducts.php);
                     break;
                 default:
-                    $this->collectReadContacts();
+                    $this->collectReadHome();
 
                     break;
             }
@@ -76,8 +76,8 @@ class ProductsController
         include 'view/old/create.php';
     }
 
-    public function showBioscoop($id){
-        $products = $this->ProductsLogic->showBioscoop($id);
+    public function showBioscoop($b_naam){
+        $products = $this->ProductsLogic->showBioscoop($b_naam);
         include 'view/bios_detail.php';
 
     }
@@ -118,6 +118,11 @@ class ProductsController
         include 'view/ViewProducts.php';
 
 
+    }
+
+    public function collectReadHome(){
+        $home = $this->ProductsLogic->readHome();
+        include 'view/home.php';
     }
 
 }
