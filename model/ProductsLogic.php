@@ -69,12 +69,12 @@ class ProductsLogic
         }
     }
 
-    public function showBioscoop($b_naam){
+    public function showBioscoop($id){
         try{
 
-            $id = $_GET['id'];
+            //$id = $_GET['id'];
 
-            $sql = "SELECT * FROM bioscopen WHERE b_naam_int=" . $id;
+            $sql = "SELECT * FROM bioscopen WHERE bioscopen_id=" . $id;
 
             $result = $this->DataHandler->showBioscoop($sql);
 

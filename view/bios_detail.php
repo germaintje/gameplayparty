@@ -2,7 +2,19 @@
 
 include "header.php";
 
-echo $content;
+$content = $products->fetch(\PDO::FETCH_ASSOC);
+
+
+$b_naam = $content['b_naam'];
+$openingstijden = $content['openingstijden'];
+$tarieven = $content['tarieven'];
+$toeslagen =  $content['toeslagen'];
+$voorwaarden =  $content['voorwaarden'];
+
+
+
+
+
 
 ?>
 
