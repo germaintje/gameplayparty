@@ -10,7 +10,7 @@
     <meta name="keywords" content="keywords,here">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/header.css" type="text/css">
-    <link rel="stylesheet" href="view/assets/style.css" type="text/css">
+    <link rel="stylesheet" href="assets/style.css" type="text/css">
     <link rel="stylesheet" href="view/assets/includes.scss" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -22,7 +22,7 @@
 <body>
 <div class="header">
     <img src="view/assets/images/logo.svg" class="logo">
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
+<nav class="navbar navbar-expand-sm navbar-light">
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -30,8 +30,10 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="index.php?op=catalogus">Bioscopen</a>
-                <a class="nav-link" href="index.php?op=contact">Contact</a>
+                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="#">Bioscopen</a>
+                <a class="nav-link" href="#">Over Ons</a>
+                <a class="nav-link" href="#">Contact</a>
             </li>
         </ul>
     </div>
