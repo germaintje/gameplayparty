@@ -74,7 +74,7 @@ class ProductsLogic
 
             //$id = $_GET['id'];
 
-            $sql = "SELECT * FROM bioscopen WHERE bioscopen_id=" . $id;
+            $sql = "SELECT * FROM bioscopen WHERE b_naam_int=" . $id;
 
             $result = $this->DataHandler->showBioscoop($sql);
 

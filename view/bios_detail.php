@@ -6,6 +6,7 @@ $content = $products->fetch(\PDO::FETCH_ASSOC);
 
 
 $b_naam = $content['b_naam'];
+$omschrijving = $content['omschrijving'];
 $openingstijden = $content['openingstijden'];
 $tarieven = $content['tarieven'];
 $toeslagen =  $content['toeslagen'];
@@ -21,21 +22,13 @@ $voorwaarden =  $content['voorwaarden'];
 <div class="container">
   <div class="row align-items-center">
     <div class="col-12 bios_detail_headers">
-      <h1 class="title_bios">Kinepolis Almere</h1>
+      <h1 class="title_bios"><?php echo $b_naam;?></h1>
     </div>
     <div class="col-12 col-md">
      <img src="../view/assets/images/kinepolisDenhelder.jpg" width=100%>
     </div>
       <div class="col-12 col-md">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum fringilla malesuada. Cras sodales quam quam, 
-          sollicitudin mattis ipsum auctor a. Morbi porta est non libero euismod scelerisque at vitae mauris. Maecenas erat tortor, 
-          ornare pretium sem eget, egestas venenatis mauris. Sed facilisis libero efficitur porta venenatis. Fusce lobortis gravida augue
-          , a tincidunt magna tempor in. Pellentesque rhoncus risus nec mattis congue.
-          Duis orci velit, vestibulum varius euismod eget, rutrum a lorem. Mauris hendrerit risus lacus, id 
-          vehicula augue laoreet sit amet. Duis hendrerit aliquet accumsan. Aenean nec facilisis felis, ut iaculis nibh. C
-          urabitur accumsan sit amet sapien in tempor. Ut placerat in neque a pulvinar. Quisque id pulvinar tortor. Nunc mi diam, moll
-          is sit amet nibh sit amet, accumsan commodo enim. Integer fringilla orci urna, sagittis venenatis mauris volutpat a.
-        </p>
+        <p><?php echo $omschrijving; ?></p>
       </div>
   </div>
 
