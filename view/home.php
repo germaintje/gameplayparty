@@ -50,6 +50,7 @@ include 'header.php';
               <div class="col-4">
                 <h3><?php echo $row["b_naam"]; ?></h3>
                 <p><?php echo $row["omschrijving"]; ?></p>
+                <a name='' id='' class='btn btn-primary ' href='#' role='button' >Bekijk</a>
               </div>
               <div class="col-8">
                 <img src="<?php echo $row["image"]; ?>" alt="First slide" class="d-block img-fluid" style="width: 100%;">
@@ -67,6 +68,7 @@ include 'header.php';
               <div class="col-4">
                 <h3><?php echo $row["b_naam"]; ?></h3>
                 <p><?php echo $row["omschrijving"]; ?></p>
+                <a name='' id='' class='btn btn-primary ' href='#' role='button' >Bekijk</a>
               </div>
               <div class="col-8">
                 <img src="<?php echo $row["image"]; ?>" alt="First slide" class="d-block img-fluid" style="width: 100%;">
@@ -79,8 +81,6 @@ include 'header.php';
           }
         }
       ?>
-
-<a name='' id='' class='btn btn-primary homebutton' href='#' role='button' >Bekijk</a>
 
       </div>
 
