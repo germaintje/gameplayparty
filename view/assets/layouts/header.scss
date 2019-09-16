@@ -1,5 +1,26 @@
+.header {
+background: white !important;
+}
+
 nav a{
-    float: right;
+    float: left;
+}
+
+.navbar {
+    background: #34495e !important;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+}
+
+.nav-link {
+    padding-right: 5pc !important;
+    color: white !important;
+}
+
+.nav-item {
+    font-size: 20px;
 }
 
 li{
