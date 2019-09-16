@@ -17,19 +17,19 @@ include "header.php";
 
 
 if(isset($_REQUEST['email'])){
-	
-	
-	$admin_email = "anasskadouri.ak@gmail.com";
-	$email = $_REQUEST['email'];
-	$subject = $_REQUEST['subject'];
-	$comment = $_REQUEST['comment'];
-	
-	mail($admin_email, "$subject", $comment, "From:" . $email);
-	
-	echo "Thanks for contacting us!";
-	}	
-	
-	else{
+
+
+    $admin_email = "anasskadouri.ak@gmail.com";
+    $email = $_REQUEST['email'];
+    $subject = $_REQUEST['subject'];
+    $comment = $_REQUEST['comment'];
+
+    mail($admin_email, "$subject", $comment, "From:" . $email);
+
+    echo "Thanks for contacting us!";
+    }
+
+    else{
 ?>
         <link rel="stylesheet" href="mail_sturen.css" type="text/css">
 <form method="post">
