@@ -30,7 +30,12 @@ class ProductsController
                 case 'detail':
                     $this->showBioscoop($_REQUEST['id']);
                     break;
-
+                    case 'catalogus';
+                    $this->showAllBioscoop();
+                    break;
+                    case 'contact';
+                    $this->showContactPage();
+                    break; 
                 case 'reads':
                     $this->collectReadContacts();
                     break;
@@ -80,6 +85,15 @@ class ProductsController
         $products = $this->ProductsLogic->showBioscoop($id);
         include 'view/bios_detail.php';
 
+    }
+
+    public function showAllBioscoop(){
+        $products = $this->ProductsLogic->showAllBioscoop();
+        include 'view/bios_catalog.php';
+    }
+
+    public function showContactPage(){
+        include 'view/contact.php';
     }
 
     public function collectUpdateContact()

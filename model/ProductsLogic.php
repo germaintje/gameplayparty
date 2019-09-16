@@ -85,6 +85,19 @@ class ProductsLogic
         }
     }
 
+    public function showAllBioscoop(){
+        try{
+            $sql = "SELECT * FROM bioscopen";
+
+            $result = $this->DataHandler->showAllBioscoop($sql);
+
+            return $result;
+
+        }catch(Exeption $e){
+            throw $e;
+        }
+    }
+
     public function updateContact($product_id, $product_type_code, $suplier_id, $product_name, $product_price, $other_product_details)
     {
     }
