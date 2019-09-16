@@ -95,7 +95,18 @@ include 'header.php';
       </div>
   </div>
 </div>
+<br>
+<br>
+<div class='row'>
 
+<div class="col-6 bioscopenHome">
+        <img src='<?php echo $row["image"];?>' style= "width:100%;">
+        <h3>Bioscopen</h3>
+        <small class='btn btn-primary '>Bekijk hier alle bioscopen.</small>
+</div>
+<div class="col-6 "></div>
+
+</div>
 <?php
 include 'footer.php';
 ?>

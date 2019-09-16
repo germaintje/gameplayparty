@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +29,9 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
+                <a class="nav-link" href="index.php">Home</a>
                 <a class="nav-link" href="index.php?op=catalogus">Bioscopen</a>
+                <a class="nav-link" href="index.php?op=about">Over Ons</a>
                 <a class="nav-link" href="index.php?op=contact">Contact</a>
             </li>
         </ul>
