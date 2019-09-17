@@ -24,3 +24,13 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+.submitForm{
+    background-color: #34495e !important;
+}
+
+form input, textarea{
+    border: 2px solid #34495e;
+    border-radius: 5px;
+}
+

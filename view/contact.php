@@ -9,7 +9,9 @@ include "header.php";
 <div class='container'>
 <div class='row'>
 
-<div class='col-6'></div>
+<div class='col-6'>
+    <h4>Contactgegevens</h4>
+</div>
 
 <div class='col-6'>
 <?php 
@@ -32,15 +34,15 @@ if(isset($_REQUEST['email'])){
     else{
 ?>
         <link rel="stylesheet" href="mail_sturen.css" type="text/css">
-<form method="post">
+<form method="post" class="form">
     <h4>Neem contact op met ons!</h4>
 <label>Email adres:</label><input name="email" type="text">
 <label>Onderwerp:</label><input name="subject" type="text">
 <label>Bericht: </label>
 
-    <textarea name="comment" rows="15" cols="40"></textarea>
+    <textarea name="comment" rows="5" cols="40"></textarea>
 
-<input type="submit" value="Submit">
+<input type="submit" value="Submit" class="btn btn-success submitForm">
 
 
 </form>

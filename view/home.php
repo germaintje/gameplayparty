@@ -49,8 +49,9 @@ include 'header.php';
             <div class="carousel-item active">
               <div class="col-4">
                 <h3><?php echo $row["b_naam"]; ?></h3>
-                <p><?php echo $row["omschrijving"]; ?></p>
-                <a name='' id='' class='btn btn-primary ' href='#' role='button' >Bekijk</a>
+                <?php echo substr($row["omschrijving"],0,300).".....";
+ ?>
+                <a name='' id='' class='btn btn-primary ' href='index.php?op=detail&id=<?php echo $row['b_naam_int']; ?>' role='button' >Bekijk</a>
               </div>
               <div class="col-8">
                 <img src="<?php echo $row["image"]; ?>" alt="First slide" class="d-block img-fluid" style="width: 100%;">
@@ -67,8 +68,9 @@ include 'header.php';
             <div class="carousel-item">
               <div class="col-4">
                 <h3><?php echo $row["b_naam"]; ?></h3>
-                <p><?php echo $row["omschrijving"]; ?></p>
-                <a name='' id='' class='btn btn-primary ' href='#' role='button' >Bekijk</a>
+                <?php echo substr($row["omschrijving"],0,300).".....";
+ ?>
+                <a name='' id='' class='btn btn-primary ' href='index.php?op=detail&id=<?php echo $row['b_naam_int']; ?>' role='button' >Bekijk</a>
               </div>
               <div class="col-8">
                 <img src="<?php echo $row["image"]; ?>" alt="First slide" class="d-block img-fluid" style="width: 100%;">
@@ -99,12 +101,16 @@ include 'header.php';
 <br>
 <div class='row'>
 
-<div class="col-6 bioscopenHome">
+<div class="col-5 bioscopenHome">
         <img src='<?php echo $row["image"];?>' style= "width:100%;">
         <h3>Bioscopen</h3>
-        <small class='btn btn-primary '>Bekijk hier alle bioscopen.</small>
+        <a href="index.php?op=catalogus"><small class='btn btn-primary'>Bekijk hier alle bioscopen.</small></a>
 </div>
-<div class="col-6 "></div>
+<div class="col-5 overonsHome">
+<img src="view/assets/images/logo.svg" style= "width:100%;" class="">
+        <h3>Over ons</h3>
+        <a href="index.php?op=catalogus"><small class='btn btn-primary '>Informatie over ons.</small></a>
+</div>
 
 </div>
 <?php

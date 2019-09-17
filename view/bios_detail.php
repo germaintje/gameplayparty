@@ -11,6 +11,7 @@ $openingstijden = $content['openingstijden'];
 $tarieven = $content['tarieven'];
 $toeslagen =  $content['toeslagen'];
 $voorwaarden =  $content['voorwaarden'];
+$image = $content['image'];
 
 
 
@@ -25,7 +26,7 @@ $voorwaarden =  $content['voorwaarden'];
       <h1 class="title_bios"><?php echo $b_naam;?></h1>
     </div>
     <div class="col-12 col-md">
-     <img src="../view/assets/images/kinepolisDenhelder.jpg" width=100%>
+     <img src="<?php echo $image; ?>" width=100%>
     </div>
       <div class="col-12 col-md">
         <p><?php echo $omschrijving; ?></p>

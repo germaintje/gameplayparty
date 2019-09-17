@@ -21,7 +21,21 @@
     margin: 0 auto !important;
 }
 
+.carousel-control-prev{
+    width: 10% !important;
+}
+
 .bioscopenHome{
     text-align: center;
     background-color: rgb(147, 169, 190);
+}
+
+.overonsHome{
+    text-align: center;
+    /*border: 5px solid #93a9be;*/
+    background-color:rgb(147, 169, 190);
+}
+
+.bioscopenHome, .overonsHome{
+    margin: 0 auto;
 }
