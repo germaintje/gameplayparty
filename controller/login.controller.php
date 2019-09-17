@@ -54,7 +54,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
                      $_SESSION['user']['fname'] = $row->fname;
                      $_SESSION['user']['uid'] = $row->uid;
                      $_SESSION['user']['email'] = $row->email;
-                     header( 'location: ../view/read.php' );
+                     header( 'location: ../' );
                      exit;
 
                   }

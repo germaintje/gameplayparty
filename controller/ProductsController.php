@@ -33,6 +33,9 @@ class ProductsController
                     case 'catalogus';
                     $this->showAllBioscoop();
                     break;
+                    case 'about';
+                    $this->showAbout();
+                    break;
                     case 'contact';
                     $this->showContactPage();
                     break; 
@@ -90,6 +93,9 @@ class ProductsController
     public function showAllBioscoop(){
         $products = $this->ProductsLogic->showAllBioscoop();
         include 'view/bios_catalog.php';
+    }
+    public function showAbout(){
+        include 'view/about.php';
     }
 
     public function showContactPage(){
