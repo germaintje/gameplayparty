@@ -25,7 +25,7 @@
       <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
         <p>
-          <i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+          <i class="fas fa-envelope mr-3"></i> gameplayparty@info.nl</p>
       </div>
       <!-- Grid column -->
 

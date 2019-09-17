@@ -16,8 +16,6 @@ include "header.php";
 <div class='col-6'>
 <?php 
 //begin mail functie
-
-
 if(isset($_REQUEST['email'])){
 
 
@@ -49,7 +47,6 @@ if(isset($_REQUEST['email'])){
 
 <?php
 }
-
 //einde mail functie
 ?>
 </div>

@@ -58,6 +58,9 @@ class ProductsController
                 case 'search':
                     $output = $this->collectSearchContacts($_REQUEST["input"]);
                     break;
+                case 'beheerderhan':
+                    $this->collectBeheerderhan();
+                    break;
                 case 'readpage':
                     //get current starting point of records
                     $item_per_page = 4;
@@ -143,6 +146,10 @@ class ProductsController
     public function collectReadHome(){
         $home = $this->ProductsLogic->readHome();
         include 'view/home.php';
+    }
+
+    public function collectBeheerderhan(){
+        include 'view/beheerderhan.php';
     }
 
 }

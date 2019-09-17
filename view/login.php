@@ -7,7 +7,7 @@
    {
       if ( $_SESSION['user']['id'] )
       {
-         header('location: ../index.php');
+         header('location: ../index.php?op=beheerderhan');
       }
    }
 #
@@ -43,10 +43,10 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="index.php">Home</a>
-                <a class="nav-link" href="index.php?op=catalogus">Bioscopen</a>
-                <a class="nav-link" href="index.php?op=about">Over Ons</a>
-                <a class="nav-link" href="index.php?op=contact">Contact</a>
+                <a class="nav-link" href="../index.php">Home</a>
+                <a class="nav-link" href="../index.php?op=catalogus">Bioscopen</a>
+                <a class="nav-link" href="../index.php?op=about">Over Ons / contact</a>
+                <!--<a class="nav-link" href="../index.php?op=contact">Contact</a>-->
             </li>
         </ul>
     </div>
@@ -57,11 +57,11 @@
    <div id="register">
       <div class="container">
          <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-6 col-md-offset-3" style="margin: 0 auto;">
                <form action="<?php echo validate( $_SERVER["PHP_SELF"] ); ?>" method="POST">
                   <div class="panel panel-default">
                      <div class="panel-heading">
-                        <h2 class="text-center">Login your Account</h2>
+                        <h2 class="text-center">Log in je account</h2>
                      </div>
                      <div class="panel-body">
                         <?php echo $general_err; ?>

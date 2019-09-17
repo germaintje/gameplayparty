@@ -31,14 +31,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="index.php">Home</a>
                 <a class="nav-link" href="index.php?op=catalogus">Bioscopen</a>
-                <a class="nav-link" href="index.php?op=about">Over Ons</a>
-                <a class="nav-link" href="index.php?op=contact">Contact</a>
+                <a class="nav-link" href="index.php?op=about">Over Ons / Contact</a>
+                <!--<a class="nav-link" href="index.php?op=contact">Contact</a>-->
             </li>
         </ul>
     </div>
 </nav>
 
 </div>
-
-<!--
-<img src='view/assets/images/logo.svg' >-->
