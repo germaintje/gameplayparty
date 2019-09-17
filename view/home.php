@@ -107,7 +107,7 @@ include 'header.php';
         <a href="index.php?op=catalogus"><small class='btn btn-primary'>Bekijk hier alle bioscopen.</small></a>
 </div>
 <div class="col-5 overonsHome">
-<img src="view/assets/images/logo-bewerkt.png" style= "width:100%;" class="">
+<img src="view/assets/images/logo-bewerkt.png" class="">
         <h3>Over ons</h3>
         <a href="index.php?op=about"><small class='btn btn-primary '>Informatie over ons / contact.</small></a>
 </div>
