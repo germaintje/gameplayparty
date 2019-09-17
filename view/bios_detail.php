@@ -38,7 +38,7 @@ $image = $content['image'];
   <div class="row">
     <div class="col-4"></div>
     <div class="col-4 tijdentitle bios_detail_headers">
-      <h2>Tijden en zalen</h2>
+      <h2>Beschikbare tijden</h2>
     </div>
     <div class="col-4"></div>
 
@@ -52,6 +52,7 @@ $image = $content['image'];
       <p class="info_party">Information</p>
       <h6 class="tijd_party">Tijd...</h6>
       <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-link">Reserveer nu</button>
     </div>
     <div class="col-12 col-md event">
     <p class="datum_party">Maandag 9 oktober</p>
