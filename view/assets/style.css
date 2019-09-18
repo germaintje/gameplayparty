@@ -1,0 +1,39 @@
+.tijdentitle h2{
+    text-align: center;
+}
+
+.event{
+    /*border: 1px solid black;
+    padding: 20px;*/
+    background: white;
+    margin: 10px;
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+
+.eventrow{
+    margin-left: 50px !important;
+    margin-right: 50px !important;
+}
+
+.datum_party{
+    text-align: center;
+}
+
+.title_bios{
+    text-align: center;
+}
+
+.bios_detail_headers{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.submitForm{
+    background-color: #34495e !important;
+}
+
+form input, textarea{
+    border: 2px solid #34495e;
+    border-radius: 5px;
+}
+
