@@ -85,6 +85,19 @@ class ProductsLogic
         }
     }
 
+    public function showParty(){
+
+        try{
+        $sql = "SELECT * FROM party";
+
+        $party = $this->DataHandler->showParty($sql);
+
+        return $party;
+    }catch(Exeption $e){
+        throw $e;
+    }
+}
+
     public function showAllBioscoop(){
         try{
             $sql = "SELECT * FROM bioscopen";

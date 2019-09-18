@@ -27,8 +27,12 @@ class ProductsController
                         $this->collectCreateContact($_REQUEST);
                     }
                     break;
-                case 'detail':
+                    case 'detail':
                     $this->showBioscoop($_REQUEST['id']);
+                    break;
+                    case 'party':
+                    $this->showParty();
+                    
                     break;
                     case 'catalogus';
                     $this->showAllBioscoop();
@@ -91,6 +95,11 @@ class ProductsController
         $products = $this->ProductsLogic->showBioscoop($id);
         include 'view/bios_detail.php';
 
+    }
+
+    public function showParty(){
+        $party = $this->ProductsLogic->showParty();
+        include 'view/bios_detail.php';
     }
 
     public function showAllBioscoop(){
