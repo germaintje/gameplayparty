@@ -55,6 +55,7 @@ $rowcount=mysqli_num_rows($query);
   </div>
 
 <!----------------------------------- hieronder -->
+<div class="row eventrow">
 <?php
 for($i=1;$i<=$rowcount;$i++)
 {
@@ -68,67 +69,19 @@ for($i=1;$i<=$rowcount;$i++)
   $dag_party = $row['dag'];
 
 ?>
-  <div class="row eventrow">
-  <div class="col-12 col-md event">
-    <p class="datum_party"><?php echo $dag_party ?>/p>
+  <div class="col event">
+    <p class="datum_party"><?php echo $dag_party ?></p>
       <h2 class="title_party"><?php echo $titelparty ?></h2>
       <p class="info_party"><?php echo $informatie_party ?></p>
       <h6 class="tijd_party"><?php echo $tijd_party ?></h6>
-      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-info disabled">Reserveer binnenkort</button>
     </div>
-</div>
   <?php
 }
 ?>
 
-
-
-<!--------------------------------------------->
-  <div class="row eventrow">
-  <div class="col-12 col-md event">
-    <p class="datum_party">Maandag 9 oktober</p>
-      <h2 class="title_party">Title</h2>
-      <p class="info_party">Information</p>
-      <h6 class="tijd_party">Tijd...</h6>
-      <button type="button" class="btn btn-info">Info</button>
-    </div>
-    <div class="col-12 col-md event">
-    <p class="datum_party">Maandag 9 oktober</p>
-      <h2 class="title_party">Title</h2>
-      <p class="info_party">Information</p>
-      <h6 class="tijd_party">Tijd...</h6>
-      <button type="button" class="btn btn-info">Info</button>
-    </div>
-    <div class="col-12 col-md event">
-    <p class="datum_party">Maandag 9 oktober</p>
-      <h2 class="title_party">Title</h2>
-      <p class="info_party">Information</p>
-      <h6 class="tijd_party">Tijd...</h6>
-      <button type="button" class="btn btn-info">Info</button>
-    </div>
-    <div class="col-12 col-md event">
-    <p class="datum_party">Maandag 9 oktober</p>
-      <h2 class="title_party">Title</h2>
-      <p class="info_party">Information</p>
-      <h6 class="tijd_party">Tijd...</h6>
-      <button type="button" class="btn btn-info">Info</button>
-    </div>
-    <div class="col-12 col-md event">
-    <p class="datum_party">Maandag 9 oktober</p>
-      <h2 class="title_party">Title</h2>
-      <p class="info_party">Information</p>
-      <h6 class="tijd_party">Tijd...</h6>
-      <button type="button" class="btn btn-info">Info</button>
-    </div>
+</div>
   </div>
-  </div>
-
-
-
-
-
-
-
   </div>
 
 

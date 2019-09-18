@@ -3,6 +3,18 @@
 
   <!-- Footer Links -->
   <div class="container text-center text-md-left">
+  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Navigatie</h6>
+        <p>
+          <a href="index.php">Home</a>
+        </p>
+        <p>
+          <a href="index.php?op=catalogus">Bioscopen</a>
+        </p>
+        <p>
+          <a href="index.php?op=about">Over ons / Contact</a>
+        </p>
+      </div>
 
     <!-- Footer links -->
     <div class="row text-center text-md-left mt-3 pb-3">
