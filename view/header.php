@@ -20,7 +20,7 @@
 </head>
 <body>
 <div class="header">
-    <img src="view/assets/images/logo.svg" class="logo">
+    <img src="view/assets/images/logo.svg" class="logo" style="max-width:100%;">
 <nav class="navbar navbar-expand-sm navbar-light">
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
         aria-expanded="false" aria-label="Toggle navigation">
