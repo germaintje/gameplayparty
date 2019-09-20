@@ -53,8 +53,8 @@ include 'header.php';
  ?>
                 <a name='' id='' class='btn btn-primary ' href='index.php?op=detail&id=<?php echo $row['b_naam_int']; ?>' role='button' >Bekijk</a>
               </div>
-              <div class="col-8">
-                <img src="<?php echo $row["image"]; ?>" alt="First slide" class="d-block img-fluid" style="width: 100%;">
+              <div class="col-8 sliderImage">
+                <img src="<?php echo $row["image"]; ?>" alt="tttFirst slide" class="d-block img-fluid" style="width: 100%;">
               </div>
 
               
