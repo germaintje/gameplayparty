@@ -20,7 +20,10 @@ $image = $content['image'];
 $connection = mysqli_connect("localhost","root","");
 $db_select = mysqli_select_db($connection, "gameplayparty");
 
-$query=mysqli_query($connection, "SELECT * FROM party");
+$id = $_REQUEST['id'];
+$sqr = "SELECT * FROM party WHERE b_naam_int = " .  $id  ;
+$query=mysqli_query($connection, $sqr);
+
 $rowcount=mysqli_num_rows($query);
 ?>
 

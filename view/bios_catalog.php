@@ -22,7 +22,7 @@ while ($content = $products->fetch(PDO::FETCH_ASSOC)) {
 ?>
 
 
-    <div class="col-4">
+    <div class="col-4 bioscoop">
     <img src="<?php echo $image; ?>" style="width: 100%;">
      <h3><?php echo $b_naam; ?></h3>
      <p><?php echo $b_adres;?></p>
