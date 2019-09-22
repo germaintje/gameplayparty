@@ -48,12 +48,9 @@ $rowcount=mysqli_num_rows($query);
 
 
   <div class="row">
-    <div class="col-4"></div>
-    <div class="col-4 tijdentitle bios_detail_headers">
+    <div class="col-12 col-xl-12 tijdentitle bios_detail_headers">
       <h2>Tijden en zalen</h2>
     </div>
-    <div class="col-4"></div>
-
     </div>
   </div>
 

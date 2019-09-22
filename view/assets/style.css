@@ -12,8 +12,7 @@
 }
 
 .eventrow{
-    margin-left: 50px !important;
-    margin-right: 50px !important;
+    padding: 20px;
 }
 
 .datum_party{
@@ -22,11 +21,6 @@
 
 .title_bios{
     text-align: center;
-}
-
-.bios_detail_headers{
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
 .submitForm{

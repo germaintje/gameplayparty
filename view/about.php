@@ -10,7 +10,7 @@ include "header.php";
 <div class='container'>
     <div class='row'>
 
-        <div class='col-6'>
+        <div class='col-12 col-xl-6'>
         <h4>Contactgegevens</h4>
             <p><b>Bedrijfsnaam:</b> GamePlayParty</p>
             <p><b>Locatie:</b> Ons bedrijf heeft geen vaste locatie. <br>omdat wij doomiddel van bioscopen onze service faciliteren is er geen hoofdkantoor nodig</p>
@@ -62,7 +62,7 @@ include "header.php";
 
         </div>
 
-        <div class='col-6'>
+        <div class='col-12 col-xl-6'>
         <h4> Over ons </h4>
         <p>GamePlan Party is een startup bedrijf en de enige in zijn branche.<br> Dit komt omdat het concept voor het verhuren van bioscoopzalen met console installaties een compleet origineel idee is.
 <br><br>Wij staan in contact met diverse bioscopen in verband met bereikbaarheid en de mogelijk is er dat filialen zich ook nog kunnen aanmelden 
