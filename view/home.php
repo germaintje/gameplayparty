@@ -26,7 +26,7 @@
 include 'header.php';
 ?>
 
-<div class="row">
+<div class="row" style="max-width: 100%">
   <div id='carouselId' class='carousel slide' data-ride='carousel' style="width: 100%">
               <ol class='carousel-indicators'>
                 <li data-target='#carouselId' data-slide-to='0' class='active'></li>
@@ -101,10 +101,10 @@ include 'header.php';
 </div>
 <br>
 <br>
-<div class='row'>
+<div class='row' style="max-width: 100%">
 
 <div class="col-5 bioscopenHome">
-        <img src='<?php echo $row["image"];?>' style= "width:100%;">
+        <img src='view/assets/images/kinepolis-about.png' style= "width: 100%;">
         <h3>Bioscopen</h3>
         <a href="index.php?op=catalogus"><small class='btn btn-primary'>Bekijk hier alle bioscopen.</small></a>
 </div>

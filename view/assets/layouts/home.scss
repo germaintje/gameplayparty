@@ -40,6 +40,11 @@
     margin: 0 auto;
 }
 
+.bioscopenHome img, .overonsHome img{
+    max-width: 207px;
+}
+
+
 @media screen and (max-width: 768px) {
     .col-5 {
       width: 100% !important;
