@@ -1,5 +1,9 @@
 .header {
-    background: white !important;
+    //background: white !important;
+    background-image: url(../images/header_background.png);
+    background-size: 50% 200%;
+
+    background-position: bottom; 
     }
     
     nav a{
@@ -68,3 +72,9 @@
         font-size: 25px;
     }
 
+    @media screen and (max-width: 768px) {
+
+    .nav-link{
+        width: 100%;
+    }
+    }

@@ -39,3 +39,26 @@
 .bioscopenHome, .overonsHome{
     margin: 0 auto;
 }
+
+.bioscopenHome img, .overonsHome img{
+    max-width: 207px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .col-5 {
+      width: 100% !important;
+      float: left !important;
+      max-width: 100% !important;
+      flex: 0 0 81.666667% !important;
+      margin: 40px;
+    }
+
+    .sliderImage{
+        width: 100% !important;
+    }
+  }
+
+  .rechts {
+      float: right;
+  }
