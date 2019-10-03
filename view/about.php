@@ -2,6 +2,15 @@
 
 include "header.php";
 
+while ($data = $about->fetch(PDO::FETCH_ASSOC)) {
+  $bedrijfsnaam = $data['bedrijfsnaam'];
+  $locatie =  $data['locatie'];
+  $email = $data['email'];
+  $telefoon = $data['telefoon'];
+  $over = $data['about'];
+
+}
+
 ?>
 
 
@@ -9,13 +18,14 @@ include "header.php";
 
 <div class='container'>
     <div class='row'>
+   
 
         <div class='col-12 col-xl-6'>
         <h4>Contactgegevens</h4>
-            <p><b>Bedrijfsnaam:</b> GamePlayParty</p>
-            <p><b>Locatie:</b> Ons bedrijf heeft geen vaste locatie. <br>omdat wij doomiddel van bioscopen onze service faciliteren is er geen hoofdkantoor nodig</p>
-            <p><b>Email:</b> GamePlayParty@info.nl</p>
-            <p><b>Telefoon:</b> Mocht u ons willen contacteren over een reservering kunt u met de desbetreffende bioscoop contact opnemen </p>
+            <p><b>Bedrijfsnaam:</b> <?php echo $bedrijfsnaam; ?></p>
+            <p><b>Locatie:</b><?php echo $locatie; ?>
+                     <p><b>Email:</b> <?php echo $email; ?></p>
+            <p><b>Telefoon:</b><?php echo $telefoon; ?> </p>
             
 
             <!-- Contact form -->
@@ -64,9 +74,7 @@ include "header.php";
 
         <div class='col-12 col-xl-6'>
         <h4> Over ons </h4>
-        <p>GamePlan Party is een startup bedrijf en de enige in zijn branche.<br> Dit komt omdat het concept voor het verhuren van bioscoopzalen met console installaties een compleet origineel idee is.
-<br><br>Wij staan in contact met diverse bioscopen in verband met bereikbaarheid en de mogelijk is er dat filialen zich ook nog kunnen aanmelden 
-</p>
+        <p><?php echo $over; ?></p>
         <div class="center" style="max-width: 50%; margin: 0 auto; margin-top: 3pc;">
             <img src="view/assets/images/kinepolis-about.png" class="" alt="" style="width: 100%;">
         </div>

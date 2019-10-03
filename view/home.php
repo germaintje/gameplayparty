@@ -25,8 +25,14 @@
 <?php
 include 'header.php';
 ?>
-
 <div class="row" style="max-width: 100%">
+<div class="center" style="margin-left:450px;">
+<h2 style="margin-left: 170px; text-align:center"> <br>	Power to the players</h2>
+<p style="margin-left: 190px; "> 	Breng jouw spel naar het volgende niveau op het grote scherm!<br> Met een <b>privé-theater </b>dat speciaal voor jou en je crew is gereserveerd, heb je nog nooit eerder zo gespeeld.<br> Maak er een toernooi van!
+<br><br>
+Neem je eigen favoriete Xbox One-spellen mee of kies uit het aanbod van je theater.<p>
+    </div>
+<br><br>
   <div id='carouselId' class='carousel slide' data-ride='carousel' style="width: 100%">
               <ol class='carousel-indicators'>
                 <li data-target='#carouselId' data-slide-to='0' class='active'></li>
