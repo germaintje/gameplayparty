@@ -75,7 +75,7 @@ class ProductsController
                     $output = $this->collectSearchContacts($_REQUEST["input"]);
                     break;
                 case 'beheerderhan':
-                    $this->collectBeheerderhan();
+                    $this->collectBeheerderContent();
                     break;
                 case 'readpage':
                     //get current starting point of records
@@ -170,7 +170,8 @@ class ProductsController
         include 'view/home.php';
     }
 
-    public function collectBeheerderhan(){
+    public function collectBeheerderContent(){
+        $content = $this->ProductsLogic->collectBeheerderContent();
         include 'view/beheerderhan.php';
     }
 

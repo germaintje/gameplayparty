@@ -158,5 +158,19 @@ class ProductsLogic
         throw $e;
     }
 }
+    public function collectBeheerderContent(){
+        try{
+
+            $sql = "SELECT * FROM about";
+
+            $about = $this->DataHandler->collectBeheerderContent($sql);
+
+            return $about;
+            
+        }catch(Exeption $e){
+            throw $e;
+        }
+
+    }
 
 }
