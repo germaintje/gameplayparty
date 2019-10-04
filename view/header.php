@@ -88,9 +88,9 @@
         box-shadow: 0 12px 16px 0 rgba(57, 62, 75, 0.24), 0 17px 50px 0 rgba(57, 62, 75, 0.24) !important;
     } </style>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item"><button class="nav-button" href="index.php">Home</button></li>
-            <li class="nav-item"><button class="nav-button" href="index.php?op=catalogus">Bioscopen</button></li>
-            <li class="nav-item"><button class="nav-button" href="index.php?op=about">Over Ons / Contact</button></li>
+            <li class="nav-item"><a class="nav-button" href="index.php">Home</a></li>
+            <li class="nav-item"><a class="nav-button" href="index.php?op=catalogus">Bioscopen</a></li>
+            <li class="nav-item"><a class="nav-button" href="index.php?op=about">Over Ons / Contact</a></li>
                 <!--<a class="nav-link" href="index.php?op=contact">Contact</a>-->
             </li>
         </ul>
