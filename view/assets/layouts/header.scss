@@ -8,6 +8,7 @@
     
     nav a{
         float: left;
+        
     }
     
     .navbar {
@@ -44,8 +45,8 @@
     
     form input, form{
         display: inherit;
-        /border-radius: 10px;/
-        /border: 1px solid black;/
+        border-radius: 10px;
+        border: 1px solid black;
     
     }
     
@@ -77,4 +78,6 @@
     .nav-link{
         width: 100%;
     }
+
+   
     }

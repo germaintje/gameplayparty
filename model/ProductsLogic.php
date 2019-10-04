@@ -146,5 +146,17 @@ class ProductsLogic
             throw $e;
         }
     }
+    public function showAbout(){
+
+        try{
+        $sql = "SELECT * FROM about";
+
+        $about = $this->DataHandler->showAbout($sql);
+
+        return $about;
+    }catch(Exeption $e){
+        throw $e;
+    }
+}
 
 }
