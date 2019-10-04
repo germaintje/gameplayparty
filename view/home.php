@@ -25,12 +25,6 @@
 <?php
 include 'header.php';
 ?>
-<h2>Power to the players</h2>
-
-
-<div class="row" style="max-width: 100%">
-
-
 <div class="row" style="max-width: 100%">
 <div class="center" style="margin-left:450px;">
 <h2 style="margin-left: 170px; text-align:center"> <br>	Power to the players</h2>

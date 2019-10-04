@@ -40,6 +40,9 @@ class ProductsController
                     case 'about';
                     $this->showAbout();
                     break;
+                    case 'beheerderbios';
+                    $this->showBeheerBioscoop();
+                    break;
                     case 'cookie';
                     $this->showCookiePage();
                     break;
@@ -171,6 +174,9 @@ class ProductsController
         include 'view/beheerderhan.php';
     }
 
+     public function collectBeheerderhan(){
+        include 'view/beheerderhan.php';
+    }
     public function showCookiePage(){
         include 'view/cookie.php';
     }

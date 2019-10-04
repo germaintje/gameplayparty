@@ -60,10 +60,6 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavId">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.php?op=catalogus">Bioscopen</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.php?op=about">Over Ons / Contact</a></li>
         <style>   .nav-button {
         padding-right: 5pc !important;
         color: white !important;
