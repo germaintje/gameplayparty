@@ -174,8 +174,8 @@ class ProductsController
         include 'view/beheerderhan.php';
     }
 
-     public function collectBeheerderhan(){
-        include 'view/beheerderhan.php';
+     public function showBeheerBioscoop(){
+        include 'view/beheerderbios.php';
     }
     public function showCookiePage(){
         include 'view/cookie.php';
