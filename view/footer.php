@@ -36,8 +36,8 @@
       <!-- Grid column -->
       <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-        <p>
-          <i class="fas fa-envelope mr-3"></i> gameplayparty@info.nl</p>
+        <a href="index.php?op=about">
+          <i class="fas fa-envelope mr-3"></i> gameplayparty@info.nl</a>
       </div>
       <!-- Grid column -->
 
@@ -51,13 +51,13 @@
 
       <!-- Grid column -->
       <div class="col-md-7 col-lg foot">
-          <a href="#"><strong>Gebruiksvoorwaarden</strong></a>
+          <a href="index.php?op=gebruikersvoorwaarden"><strong>Gebruiksvoorwaarden</strong></a>
       </div>
       <div class="col-md-7 col-lg foot">
-          <a href="#"><strong>Privacy beleid</strong></a>
+          <a href="index.php?op=privacy"><strong>Privacy beleid</strong></a>
       </div>
       <div class="col-md-7 col-lg foot">
-          <a href="#"><strong>Cookie beleid</strong></a>
+          <a href="index.php?op=cookie"><strong>Cookie beleid</strong></a>
       </div>
     </div>
     <!-- Grid row -->

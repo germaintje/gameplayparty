@@ -40,7 +40,7 @@ $rowcount=mysqli_num_rows($query);
       <h1 class="title_bios"><?php echo $b_naam;?></h1>
     </div>
     <div class="col-12 col-md">
-     <img src="<?php echo $image; ?>" width=100%>
+     <img src="<?php echo $image; ?>" height=200px; width=100%>
     </div>
       <div class="col-12 col-md">
         <p><?php echo $omschrijving; ?></p>
