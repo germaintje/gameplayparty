@@ -25,8 +25,12 @@
 <?php
 include 'header.php';
 ?>
+<h2>Power to the players</h2>
+
 
 <div class="row" style="max-width: 100%">
+
+
   <div id='carouselId' class='carousel slide' data-ride='carousel' style="width: 100%">
               <ol class='carousel-indicators'>
                 <li data-target='#carouselId' data-slide-to='0' class='active'></li>
