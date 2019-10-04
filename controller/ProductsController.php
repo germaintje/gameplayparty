@@ -40,6 +40,18 @@ class ProductsController
                     case 'about';
                     $this->showAbout();
                     break;
+                    case 'beheerderbios';
+                    $this->showBeheerBioscoop();
+                    break;
+                    case 'cookie';
+                    $this->showCookiePage();
+                    break;
+                    case 'privacy';
+                    $this->showPrivacyPage();
+                    break;
+                    case 'gebruikersvoorwaarden';
+                    $this->showTermsPage();
+                    break;
                     case 'contact';
                     $this->showContactPage();
                     break; 
@@ -107,6 +119,7 @@ class ProductsController
         include 'view/bios_catalog.php';
     }
     public function showAbout(){
+        $about = $this->ProductsLogic->showAbout();
         include 'view/about.php';
     }
 
@@ -161,4 +174,18 @@ class ProductsController
         include 'view/beheerderhan.php';
     }
 
+     public function showBeheerBioscoop(){
+        include 'view/beheerderbios.php';
+    }
+    public function showCookiePage(){
+        include 'view/cookie.php';
+    }
+
+    public function showTermsPage(){
+        include 'view/gebruiksvoorwaarden.php';
+    }
+
+    public function showPrivacyPage(){
+        include 'view/privacy.php';
+    }
 }

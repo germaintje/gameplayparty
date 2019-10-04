@@ -40,6 +40,15 @@ class DataHandler{
 
     }
 
+    public function showBeheerBioscoop($sql){
+        return $this->dbh->query($sql,PDO::FETCH_ASSOC);
+    }
+    public function showAbout($sql){
+        var_dump($sql);
+        return $this->dbh->query($sql,PDO::FETCH_ASSOC);
+
+    }
+
     public function showAllBioscoop($sql){
         //var_dump($sql);
         return $this->dbh->query($sql,PDO::FETCH_ASSOC);
