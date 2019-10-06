@@ -1,15 +1,45 @@
 <?php include "header.php"; ?>
+<script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
 
-<div id="example"></div>
-<script>
-var editor = new FroalaEditor('#example')
-</script>
+<textarea name="content" id="editor">This is some sample content.</textarea>
+                <script>
+                       // Remove a few plugins from the default setup.
+                    ClassicEditor
+                        .create( document.querySelector( '#editor' ), {
+                            removePlugins: [ 'Heading' ],
+                            toolbar: [ 'bold', 'italic', 'bulletedList', 'numberedList', 'blockQuote', 'Link' ]
+                        } )
+                        .catch( error => {
+                            console.log( error );
+                        } ); 
+                </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <div class="fr-view">
   Here comes the HTML edited with the Froala rich text editor.
 </div>
 
-<div id="myEditor"></div>
+<div id="myEditor">t</div>
 <button id="saveButton">Save</button>
 
 <script>
@@ -45,7 +75,7 @@ var editor = new FroalaEditor('#example')
     editor.save.save();
   })
 </script>
-
+-->
 
 
 <?php
