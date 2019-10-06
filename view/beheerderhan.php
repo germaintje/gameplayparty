@@ -1,24 +1,40 @@
 <?php include "header.php"; ?>
+<!-- javascript van de WYSIWYG -->
 <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
+<?php
+// hierin moet de database info komen
+$data = "testt";
+?>
 
-<textarea name="content" id="editor">This is some sample content.</textarea>
+<h1>Classic editor</h1>
+    <!--formulier die als je op submit klikt het in database zet -->
+    <form action="[URL]" method="post">
+        <!-- textarea hoerdoor zie je de editor -->
+        <textarea name="content" id="editor">
+          <!-- zet hierin de variable die je daarboven hebt gemaakt om iets vanuit de database in de editor te showen -->
+          <?= $data ?>
+        </textarea>
+        <!-- submit button -->
+      <p><input type="submit" value="Submit"></p>
+    </form>
+                <!-- script om de editor te laten zien -->
                 <script>
                        // Remove a few plugins from the default setup.
                     ClassicEditor
                         .create( document.querySelector( '#editor' ), {
-                            removePlugins: [ 'Heading' ],
-                            toolbar: [ 'bold', 'italic', 'bulletedList', 'numberedList', 'blockQuote', 'Link' ]
+                          // verwijder bepaalde functies
+                            removePlugins: [ 'Heading', 'link' ],
+                            //voeg functies toe 
+                            toolbar: [ 'bold', 'italic', 'bulletedList', 'numberedList', 'blockQuote']
                         } )
                         .catch( error => {
                             console.log( error );
                         } ); 
                 </script>
 
-
-
-
-
-
+<?php
+    //$editor_data = $_POST[ 'content' ];
+?>
 
 
 
