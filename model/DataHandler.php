@@ -104,5 +104,10 @@ class DataHandler{
         return $this->dbh->query($sql, PDO::FETCH_ASSOC);
 
     }
+
+    public function updateContact($sql){
+        //var_dump($sql);
+        return $this->dbh->query($sql, PDO::FETCH_ASSOC);
+    }
 }
 ?>

@@ -21,15 +21,20 @@ while ($data = $about->fetch(PDO::FETCH_ASSOC)) {
    
 
         <div class='col-12 col-xl-6'>
-        <h4>Contactgegevens</h4>
-            <p><b>Bedrijfsnaam:</b> <?php echo $bedrijfsnaam; ?></p>
+            <!--<p><b>Bedrijfsnaam:</b> <?php echo $bedrijfsnaam; ?></p>
             <p><b>Locatie:</b><?php echo $locatie; ?>
                      <p><b>Email:</b> <?php echo $email; ?></p>
             <p><b>Telefoon:</b><?php echo $telefoon; ?> </p>
-            
+            -->
+            <?php echo $locatie; ?>
 
-            <!-- Contact form -->
-            <?php 
+
+
+        </div>
+
+        <div class='col-12 col-xl-6'>
+                        <!-- Contact form -->
+                        <?php 
                 //begin mail functie
                 if(isset($_REQUEST['email'])){
 
@@ -69,16 +74,6 @@ while ($data = $about->fetch(PDO::FETCH_ASSOC)) {
                     }
                     //einde mail functie
                  ?>
-
-        </div>
-
-        <div class='col-12 col-xl-6'>
-        <h4> Over ons </h4>
-        <p><?php echo $over; ?></p>
-        <div class="center" style="max-width: 50%; margin: 0 auto; margin-top: 3pc;">
-            <img src="view/assets/images/kinepolis-about.png" class="" alt="" style="width: 100%;">
-        </div>
-
         </div>
     </div>
 </div>

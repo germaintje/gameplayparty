@@ -95,8 +95,8 @@ class ProductsLogic
         return $party;
     }catch(Exeption $e){
         throw $e;
+        }
     }
-}
 
     public function showAllBioscoop(){
         try{
@@ -111,12 +111,9 @@ class ProductsLogic
         }
     }
 
-    public function updateContact($product_id, $product_type_code, $suplier_id, $product_name, $product_price, $other_product_details)
-    {
-    }
+    
 
-    public function deleteContact($id)
-    {
+    public function deleteContact($id){
         try {
             $sql = "DELETE FROM products WHERE id =" . $id ;
             $result = $this->DataHandler->deleteData($sql);
@@ -156,8 +153,8 @@ class ProductsLogic
         return $about;
     }catch(Exeption $e){
         throw $e;
+        }
     }
-}
     public function collectBeheerderContent(){
         try{
 
@@ -171,6 +168,24 @@ class ProductsLogic
             throw $e;
         }
 
+    }
+
+    public function updateContact(){
+        try{
+
+            $newcontent = $_POST['content'];
+
+            $sql = "Update about SET locatie = '$newcontent' WHERE about_id = 1";
+
+            $update = $this->DataHandler->updateContact($sql);
+            
+            $melding = "Pagina is bijgewerkt";
+
+            return $melding;
+
+        }catch(Exeption $e){
+            throw $e;
+        }
     }
 
 }

@@ -86,6 +86,11 @@ class ProductsController
                     $pages = $data->countPages('SELECT COUNT(*) FROM products');
                     include (view/ViewProducts.php);
                     break;
+                case 'updateContact':
+                if (isset($_POST['updateContact'])) {
+                    $this->UpdateContact();
+                } 
+                break;
                 default:
                     $this->collectReadHome();
 
@@ -188,5 +193,10 @@ class ProductsController
 
     public function showPrivacyPage(){
         include 'view/privacy.php';
+    }
+
+    public function updateContact(){
+        $update = $this->ProductsLogic->updateContact();
+        include 'view/beheerderhan.php';
     }
 }
