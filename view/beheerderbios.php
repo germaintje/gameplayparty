@@ -1,54 +1,86 @@
 <?php
 
-include "header.php";
+require "generateTables.php";
 
-?>
-<div class="beheerform">
-<form class="form-horizontal">
-<fieldset>
+class View {
+    private $contacts;
+    private $lastID;
+    private $test;
 
-<!-- Form Name -->
-<legend>beheer bios</legend>
+    public function __Construct($contacts = "", $lastID = NULL) {
+        $this->test = new generatedTableButton;
+        $this->contacts = $contacts;
+        $this->lastID = $lastID;
+    }
 
-<!-- Text input-->
-<div class="form-group">
-  <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md"> 
-</div>
+    public function __Destruct() {
 
-<!-- Text input-->
-<div class="form-group">
-  <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md"> 
-</div>
+    }
 
-<!-- Textarea -->
-<div class="form-group">
-                   
-    <textarea class="form-control" id="textarea" name="textarea">default text</textarea>
+    public function CreateView($columnNames) {
+        // $main = $this->GenerateCreateTable($columnNames);
+        $main = $this->test->GenerateInputTable($columnNames);
+        $view = $this->AddFooterAndHeader($main);
+        return $view;
+    }
 
-</div>
+    public function ReadView() {
+        $main = "<main>";
+        $main .= "<a class='generatedTableButton' href='index.php?op=create'>Create</a>";
+        $main .= $this->test->GenerateButtonedTable($this->contacts);
 
-<!-- Text input-->
-<div class="form-group">
+        $view = $this->AddFooterAndHeader($main);
+        return $view;
+    }
 
-  <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+    // public function UpdateView() {
+    //     $view = $this->AddFooterAndHeader($main);
+    //     return $view;
+    // }
 
-</div>
+    private function DefaultMain($mode = 0) {
+        $main = "<main>";
 
-<!-- File Button --> 
-<div class="form-group">
+        if ($mode !== 0) {
+            $main .= "<div class='col-12' >Record $this->lastID is succesfully removed</div>";
+        }
 
-    <input id="filebutton" name="filebutton" class="input-file" type="file">
+        $main .= "<a class='generatedTableButton' href='index.php?op=create'>Create</a>";
+        $main .= $this->GenerateTable($this->contacts);
 
-</div>
+        return $main;
+    }
 
-<!-- Button (Double) -->
-<div class="form-group">
-    <button id="button1id" name="button1id" class="btn btn-success">Good Button</button>
-    <button id="button2id" name="button2id" class="btn btn-danger">Scary Button</button>
-</div>
 
-</div>
-<?php 
+    private function AddFooterAndHeader($main) {
+        $format = $this->Header();
+        $format .= $main;
+        $format .= $this->Footer();
 
-include 'footer.php';
+        return $format;
+    }
+
+    private function Header() {
+        $header = "
+            <header class='col-12 header'>
+                <div class='col-3 logo'>MVC</div>
+                <!--<nav class='col-9'>
+                    <ul class='col-8'>
+                        <li><a href='index.php?view=create'>Create</a></li>
+                        <li><a href='index.php?view=default'>Read</a></li>
+                        <li><a href='index.php?view=update'>Update</a></li>
+                        <li><a href='index.php?view=default'>Delete</a></li>
+                    </ul>
+                </nav>-->
+            </header>
+        ";
+        return $header;
+    }
+
+    private function Footer() {
+        $footer = '';
+        return $footer;
+    }
+}
+
 ?>
