@@ -135,7 +135,7 @@ class ProductsLogic
 
     public function readHome(){
         try{
-            $sql = "SELECT * FROM bioscopen ";
+            $sql = "SELECT * FROM about WHERE page_id = 2 ";
             $result = $this->DataHandler->readHome($sql);
 
             return $result;
@@ -146,7 +146,7 @@ class ProductsLogic
     public function showAbout(){
 
         try{
-        $sql = "SELECT * FROM about";
+        $sql = "SELECT * FROM about WHERE page_id = 1";
 
         $about = $this->DataHandler->showAbout($sql);
 
@@ -155,10 +155,10 @@ class ProductsLogic
         throw $e;
         }
     }
-    public function collectBeheerderContent(){
+    public function collectBeheerderContent($id){
         try{
 
-            $sql = "SELECT * FROM about";
+            $sql = "SELECT * FROM about WHERE page_id = $id";
 
             $about = $this->DataHandler->collectBeheerderContent($sql);
 
@@ -170,12 +170,12 @@ class ProductsLogic
 
     }
 
-    public function updateContact(){
+    public function updateContact($id){
         try{
 
             $newcontent = $_POST['content'];
 
-            $sql = "Update about SET locatie = '$newcontent' WHERE about_id = 1";
+            $sql = "Update about SET content = '$newcontent' WHERE page_id =". $id;
 
             $update = $this->DataHandler->updateContact($sql);
             

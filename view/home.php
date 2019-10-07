@@ -1,37 +1,30 @@
 <?php 
-      /*$servername = "localhost";
-      $username = "root";
-      $password = "";
-      $dbname = "gameplayparty";
-
-      //create connection
-      $conn = new mysqli($servername, $username, $password, $dbname);
-
-      //check connection
-      if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-      }
-
-      $sql = "SELECT * FROM bioscopen";
-      $result = $conn->query($sql);*/
+   
       $connection = mysqli_connect("localhost","root","");
       $db_select = mysqli_select_db($connection, "gameplayparty");
 
       $query=mysqli_query($connection, "SELECT * FROM bioscopen");
       $rowcount=mysqli_num_rows($query);
 
+
+while ($content = $home->fetch(PDO::FETCH_ASSOC)) {
+  $id = $content['page_id'];
+  $inhoud = $content['content'];
+
+  //echo $inhoud;
+
+}
 ?>
+
+
 
 <?php
 include 'header.php';
 ?>
-<div class="row" style="max-width: 100%">
-<div class="center" style="margin-left:450px;">
-<h2 style="margin-left: 170px; text-align:center"> <br>	Power to the players</h2>
-<p style="margin-left: 190px; "> 	Breng jouw spel naar het volgende niveau op het grote scherm!<br> Met een <b>privé-theater </b>dat speciaal voor jou en je crew is gereserveerd, heb je nog nooit eerder zo gespeeld.<br> Maak er een toernooi van!
-<br><br>
-Neem je eigen favoriete Xbox One-spellen mee of kies uit het aanbod van je theater.<p>
-    </div>
+<div class="row" style="max-width: 100%;">
+  <div class="col-12 col-xl-12" style="text-align: center; margin: 0 auto;">
+      <?php echo $inhoud;?>
+  </div>
 <br><br>
   <div id='carouselId' class='carousel slide' data-ride='carousel' style="width: 100%">
               <ol class='carousel-indicators'>

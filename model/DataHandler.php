@@ -44,7 +44,7 @@ class DataHandler{
         return $this->dbh->query($sql,PDO::FETCH_ASSOC);
     }
     public function showAbout($sql){
-        var_dump($sql);
+        //var_dump($sql);
         return $this->dbh->query($sql,PDO::FETCH_ASSOC);
 
     }
@@ -96,7 +96,7 @@ class DataHandler{
     
     public function readHome($sql){
        // $this->query($sql);
-       //return $this->dbh->query($sql,PDO::FETCH_ASSOC);
+       return $this->dbh->query($sql,PDO::FETCH_ASSOC);
     }
 
     public function collectBeheerderContent($sql){

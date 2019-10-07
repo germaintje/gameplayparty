@@ -32,7 +32,9 @@ class ProductsController
                     break;
                     case 'party':
                     $this->showParty();
-                    
+                    break;
+                    case 'beheerderhan';
+                    $this->beheerderhan();
                     break;
                     case 'catalogus';
                     $this->showAllBioscoop();
@@ -74,8 +76,9 @@ class ProductsController
                 case 'search':
                     $output = $this->collectSearchContacts($_REQUEST["input"]);
                     break;
-                case 'beheerderhan':
-                    $this->collectBeheerderContent();
+                case 'edithanneke':
+                    $id = $_REQUEST['id'];
+                    $this->collectBeheerderContent($id);
                     break;
                 case 'readpage':
                     //get current starting point of records
@@ -87,8 +90,9 @@ class ProductsController
                     include (view/ViewProducts.php);
                     break;
                 case 'updateContact':
+                $id = $_REQUEST['id'];
                 if (isset($_POST['updateContact'])) {
-                    $this->UpdateContact();
+                    $this->UpdateContact($id);
                 } 
                 break;
                 default:
@@ -175,9 +179,9 @@ class ProductsController
         include 'view/home.php';
     }
 
-    public function collectBeheerderContent(){
-        $content = $this->ProductsLogic->collectBeheerderContent();
-        include 'view/beheerderhan.php';
+    public function collectBeheerderContent($id){
+        $content = $this->ProductsLogic->collectBeheerderContent($id);
+        include 'view/edithanneke.php';
     }
 
      public function showBeheerBioscoop(){
@@ -195,8 +199,12 @@ class ProductsController
         include 'view/privacy.php';
     }
 
-    public function updateContact(){
-        $update = $this->ProductsLogic->updateContact();
+    public function updateContact($id){
+        $update = $this->ProductsLogic->updateContact($id);
+        include 'view/edithanneke.php';
+    }
+
+    public function beheerderhan(){
         include 'view/beheerderhan.php';
     }
 }

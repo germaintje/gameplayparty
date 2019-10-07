@@ -3,11 +3,7 @@
 include "header.php";
 
 while ($data = $about->fetch(PDO::FETCH_ASSOC)) {
-  $bedrijfsnaam = $data['bedrijfsnaam'];
-  $locatie =  $data['locatie'];
-  $email = $data['email'];
-  $telefoon = $data['telefoon'];
-  $over = $data['about'];
+  $inhoud =  $data['content'];
 
 }
 
@@ -26,7 +22,7 @@ while ($data = $about->fetch(PDO::FETCH_ASSOC)) {
                      <p><b>Email:</b> <?php echo $email; ?></p>
             <p><b>Telefoon:</b><?php echo $telefoon; ?> </p>
             -->
-            <?php echo $locatie; ?>
+            <?php echo $inhoud; ?>
 
 
 
@@ -56,7 +52,7 @@ while ($data = $about->fetch(PDO::FETCH_ASSOC)) {
                         <h4>Contact opnemen met ons</h4>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Emailadres:</label>
-                            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Voer uw email hier in">
                             <small id="emailHelp" class="form-text text-muted">Wij zullen nooit uw email delen met anderen.</small>
                         </div>
                         <div class="form-group">
