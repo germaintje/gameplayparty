@@ -3,7 +3,7 @@
 include "header.php";
 
 ?>
-<div class='container'>
+<div class=' col-12 container'>
 <div class='row'>
 <h1>Terms and Conditions ("Terms")</h1>
 </div>

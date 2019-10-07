@@ -3,7 +3,7 @@
 include "header.php";
 
 ?>
-<div class='container'>
+<div class='container col-12'>
 <div class='row'>
 <h1>Privacybeleid</h1>
 
