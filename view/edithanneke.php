@@ -19,7 +19,6 @@ while ($content = $content->fetch(PDO::FETCH_ASSOC)) {
 
 ?>
 
-<?php echo $_REQUEST['id']; ?>
 <style>
 
 form  .editor{
