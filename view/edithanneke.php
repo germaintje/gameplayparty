@@ -8,14 +8,6 @@ while ($content = $content->fetch(PDO::FETCH_ASSOC)) {
   $id = $content['page_id'];
   $inhoud = $content['content'];
 
- /* echo "<strong>Contact pagina</strong>";
-  echo "<br>";
-  echo "bedrijfsnaam" . $bedrijfsnaam;
-  echo "<br>";
-  echo "email" . $email;
-  echo "<br>";
-  echo "locatie" . $locatie;*/
-
 ?>
 
 <?php echo $_REQUEST['id']; ?>
