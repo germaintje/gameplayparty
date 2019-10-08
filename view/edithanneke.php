@@ -7,6 +7,7 @@ $data = "testt";
 while ($content = $content->fetch(PDO::FETCH_ASSOC)) {
   $id = $content['page_id'];
   $inhoud = $content['content'];
+  $paginanaam = $content['Pagina'];
 
  /* echo "<strong>Contact pagina</strong>";
   echo "<br>";
@@ -19,7 +20,16 @@ while ($content = $content->fetch(PDO::FETCH_ASSOC)) {
 ?>
 
 <?php echo $_REQUEST['id']; ?>
-<h1>Classic editor</h1>
+<style>
+
+form  .editor{
+      color: #fff !important;
+      background-color: #28a745 !important;
+      border-color: #28a745 !important;
+    }
+</style>
+
+<h1><?php echo $paginanaam; ?></h1>
     <!--formulier die als je op submit klikt het in database zet -->
     <form action="index.php?op=updateContact&id=<?php echo $id; ?>" method="post">
         
@@ -30,7 +40,7 @@ while ($content = $content->fetch(PDO::FETCH_ASSOC)) {
           <?= $inhoud ?>
         </textarea>
         <!-- submit button -->
-      <p><input type="submit" value="Submit" name="updateContact"></p>
+      <p><input class="btn btn-success editor" type="submit" value="Submit" name="updateContact"></p>
     </form>
                 <!-- script om de editor te laten zien -->
                 <script>
