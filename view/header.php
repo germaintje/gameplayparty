@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Gameplayparty</title>
+    <link rel="stylesheet" href="view/assets/DateStyle.css" type="text/css">
+    <link rel="stylesheet" href="view/assets/dateTimePicker.css" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/header.css" type="text/css">
+    <link rel="stylesheet" href="view/assets/layouts/header.css" type="text/css">
     <link rel="stylesheet" href="view/assets/style.css" type="text/css">
     <link rel="stylesheet" href="view/assets/includes.scss" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">

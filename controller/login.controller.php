@@ -54,14 +54,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
                      $_SESSION['user']['fname'] = $row->fname;
                      $_SESSION['user']['uid'] = $row->uid;
                      $_SESSION['user']['email'] = $row->email;
-                     $_SESSION['user']['role'] = $row->role;
-                     if($row->role == "1") {
-                        header( 'location: ../index.php?op=beheerderhand' );
-                     }
-                     else {
-                        header( 'location: ../index.php?op=beheerderhan' );
-                     }
-                     
+                     header( 'location: ../index.php?op=beheerderhan' );
                      exit;
 
                   }
