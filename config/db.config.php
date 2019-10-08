@@ -3,7 +3,7 @@
 class Database
 {
    // Declare all connection strings
-   private static $db_server = 'localhost';
+   private static $db_server = '127.0.0.1';
    private static $db_name = 'gameplayparty';
    private static $db_username = 'root';
    private static $db_pwd = '';
