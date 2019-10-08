@@ -9,16 +9,16 @@ while ($content = $content->fetch(PDO::FETCH_ASSOC)) {
   $inhoud = $content['content'];
   $paginanaam = $content['Pagina'];
 
+ /* echo "<strong>Contact pagina</strong>";
+  echo "<br>";
+  echo "bedrijfsnaam" . $bedrijfsnaam;
+  echo "<br>";
+  echo "email" . $email;
+  echo "<br>";
+  echo "locatie" . $locatie;*/
+
 ?>
 
-<style>
-
-form  .editor{
-      color: #fff !important;
-      background-color: #28a745 !important;
-      border-color: #28a745 !important;
-    }
-</style>
 
 <h1><?php echo $paginanaam; ?></h1>
     <!--formulier die als je op submit klikt het in database zet -->
@@ -31,7 +31,7 @@ form  .editor{
           <?= $inhoud ?>
         </textarea>
         <!-- submit button -->
-      <p><input class="btn btn-success editor" type="submit" value="Submit" name="updateContact"></p>
+      <p><input type="submit" value="Submit" name="updateContact"></p>
     </form>
                 <!-- script om de editor te laten zien -->
                 <script>
