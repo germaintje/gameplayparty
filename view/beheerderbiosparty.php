@@ -118,6 +118,26 @@ for($i=1;$i<=$rowcount;$i++)
         }
 
 ?>
+<style> a:link {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+a:active {
+  text-decoration: underline;
+  color: white;
+}
+</style>
   <div class="col event">
       <p class="datum_party"><?php echo $dag. " " .date("d", strtotime($dag_party)). " " .$maand ?></p> 
      

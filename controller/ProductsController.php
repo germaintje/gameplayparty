@@ -45,6 +45,9 @@ class ProductsController
                     case 'beheerderbios';
                     $this->showBeheerBioscoop();
                     break;
+                    case 'beheerderbiosparty';
+                    $this->showBeheerPartyBioscoop();
+                    break;
                     case 'cookie';
                     $this->showCookiePage();
                     break;
@@ -95,11 +98,33 @@ class ProductsController
                     $this->UpdateContact($id);
                 } 
                 break;
+                case 'createParty':
+               
+                  return  $this->collectCreateParty();
+                
+                break;
+                 case 'updateParty':
+              
+                        $id = $_REQUEST['id'];
+                     return   $this->collectUpdateParty($id);
+                    
+                    break;
+                    case 'updatePostParty':
+                    $id = $_REQUEST['id'];
+                    if (isset($_POST['submit'])) {
+                        $this->UpdatePostParty($id);
+                    } 
+                    break;
+                    case 'deleteParty':
+                  //  $id = $_REQUEST['reserveerbeschikbaar_id'];
+                    $this->collectDeleteParty();
+                    break;
                 default:
                     $this->collectReadHome();
 
                     break;
             }
+           
         } catch (ValidationException $e) {
             $errors = $e->getErrors();
         }
@@ -185,7 +210,12 @@ class ProductsController
     }
 
      public function showBeheerBioscoop(){
+        $products = $this->ProductsLogic->showAllBioscoop();
         include 'view/beheerderbios.php';
+    }
+    public function showBeheerPartyBioscoop(){
+        $products = $this->ProductsLogic-> showParty();
+        include 'view/beheerderbiosparty.php';
     }
     public function showCookiePage(){
         include 'view/cookie.php';
@@ -206,5 +236,32 @@ class ProductsController
 
     public function beheerderhan(){
         include 'view/beheerderhan.php';
+    }
+
+    public function collectCreateParty()
+    {
+       // $products = $this->ProductsLogic->createParty($_POST['titel'], $_POST['informatie'], $_POST['begin_tijd'], $_POST['eind_tijd'], $_POST['zaal'], $_POST['dag'], $_POST['b_naam_int']);
+        include 'view/old/createParty.php';
+    }
+
+    
+    public function collectUpdateparty($id)
+    {
+        $update = $this->ProductsLogic->collectUpdateParty($id);
+      // $id $products = $this->ProductsLogic->updateParty($_POST['titel'], $_POST['informatie'], $_POST['begin_tijd'], $_POST['eind_tijd'], $_POST['zaal'], $_POST['dag'], $_POST['b_naam_int']);
+        include 'view/old/updateParty.php';
+    }
+
+    public function UpdatePostParty($id){
+        $update = $this->ProductsLogic->UpdateParty($id);
+        include 'view/beheerderbiosparty.php';
+    }
+
+    public function collectDeleteParty()
+    {
+        //echo "Gebruiker is verwijderd";
+       //$id $products = $this->ProductsLogic->deleteParty($id);
+        include 'view/old/delete.php';
+
     }
 }
