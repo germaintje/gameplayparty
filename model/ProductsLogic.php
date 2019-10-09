@@ -15,7 +15,25 @@ class ProductsLogic
     {
     }
 
-    
+    public function createContact($product_id, $product_type_code, $supplier_id, $product_name, $product_price, $other_product_details)
+    {
+        try {
+            $product_id = $_POST['product_id'];
+            $product_type_code = $_POST['product_type_code'];
+            $supplier_id = $_POST['supplier_id'];
+            $product_name = $_POST['product_name'];
+            $product_price = $_POST['product_price'];
+            $other_product_details = $_POST['other_product_details'];
+
+            $sql = "INSERT INTO products(`product_id`,`product_type_code`,`suplier_id`,`product_name`, `product_price` ,`other_product_details`)VALUES('$product_id', '$product_type_code', '$suplier_id', '$product_name', '$product_price', '$other_product_details');";
+            echo "test1";
+            $result = $this->DataHandler->createData($sql);
+            echo "test2";
+            return $result;
+        }catch (Exception $e){
+            throw $e;
+        }
+    }
 
     public function readContacts(){
 
@@ -66,8 +84,6 @@ class ProductsLogic
             throw $e;
         }
     }
-    
-    
 
     public function showParty(){
 
@@ -97,6 +113,15 @@ class ProductsLogic
 
     
 
+    public function deleteContact($id){
+        try {
+            $sql = "DELETE FROM products WHERE id =" . $id ;
+            $result = $this->DataHandler->deleteData($sql);
+            return $result;
+        }catch (Exception $e) {
+            throw $e;
+        }
+    }
 
     public function searchContact($input){
         try{
@@ -144,83 +169,23 @@ class ProductsLogic
         }
 
     }
-    
-    public function CreateParty($products/*$beschickbaarheid_id, $titel, $informatie, $begin_tijd, $eind_tijd, $zaal, $dag, $b_naam_int*/)
-    {
-        try {
-            $beschickbaarheid_id = $_POST['reserveerbeschikbaar_id'];
-            $titel = $_POST['titel'];
-            $informatie = $_POST['informatie'];
-            $begin_tijd = $_POST['begin_tijd'];
-            $eind_tijd = $_POST['eind_tijd'];
-            $zaal = $_POST['zaal'];
-            $dag = $_POST['dag'];
-            $b_naam_int = $_POST['b_naam_int'];
-            
-            $sql = "INSERT INTO party(`reserveerbeschickbaar_id`,`titel`,`informatie`,`begin_tijd`, `eind_tijd` ,`zaal`,'dag','b_naam_int')VALUES('$beschickbaarheid_id', '$titel', '$informatie', '$begin_tijd', '$eind_tijd', '$zaal', '$dag', '$b_naam_int');";
-            echo "test1";
-            $result = $this->DataHandler->createData($sql);
-            echo "test2";
-            return $result;
-        }catch (Exception $e){
-            throw $e;
-        }
-    }
 
-    public function collectUpdateParty($id){
+    public function updateContact($id){
         try{
 
-            $sql = "SELECT * FROM party WHERE reserveerbeschikbaar_id = $id";
+            $newcontent = $_POST['content'];
 
-            $about = $this->DataHandler->collectBeheerderContent($sql);
+            $sql = "Update about SET content = '$newcontent' WHERE page_id =". $id;
 
+            $update = $this->DataHandler->updateContact($sql);
             
-            
+            $melding = "Pagina is bijgewerkt";
+
+            return $melding;
+
         }catch(Exeption $e){
             throw $e;
         }
     }
 
-    public function UpdateParty($id/*$beschickbaarheid_id, $titel, $informatie, $begin_tijd, $eind_tijd, $zaal, $dag, $b_naam_int*/){
-    
-            // set variables
-            try{
-            $beschickbaarheid_id = $_POST["reserveerbeschikbaar_id"];
-            $titel = $_POST['titel'];
-            $informatie = $_POST['informatie'];
-            $begin_tijd = $_POST['begin_tijd'];
-            $eind_tijd = $_POST['eind_tijd'];
-            $zaal = $_POST['zaal'];
-            $dag = $_POST['dag'];
-            $b_naam_int = $_POST['b_naam_int'];
-            // set sql;
-            $sql = "UPDATE party 
-            SET titel = '$titel', informatie = '$informatie', 
-            begin_tijd = '$begin_tijd', eind_tijd = '$eind_tijd', 
-            zaal = '$zaal', dag = '$dag' WHERE reserveerbeschikbaar_id = '$beschickbaarheid_id'";
-                
-            // run update
-            
-            $update = $this->DataHandler->UpdateParty($sql);
-            
-            
-            
-        }catch(Exeption $e){
-            throw $e;
-        }
-    
-    }
-
-
-
- public function DeleteParty($id){
-        try {
-            $sql = "DELETE FROM party WHERE id =" . $id ;
-            $result = $this->DataHandler->deleteData($sql);
-            return $result;
-        }catch (Exception $e) {
-            throw $e;
-        }
-    }
-
-}  
+}
