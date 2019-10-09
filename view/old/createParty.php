@@ -2,7 +2,7 @@
 
 <form action="?op=createParty" class="form" style="padding: 15px 17px 10px 65px;" method="POST">
     <legend>CREATE NEW PARTY</legend>
-    <label>Id: </label><input type="text" name="reserveerbeschikbaarheid_id">
+   
     <label>titel: </label><input type="text" name="titel">
     <label>informatie: </label><input type="text" name="informatie">
     <label>begin tijd: </label><input type="time" id="appt" name="appt"

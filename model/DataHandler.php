@@ -109,5 +109,37 @@ class DataHandler{
         //var_dump($sql);
         return $this->dbh->query($sql, PDO::FETCH_ASSOC);
     }
+
+    public function updateParty($sql){
+        return $this->dbh->query($sql, PDO::FETCH_ASSOC);
+    }
+
+    public function createParty($sql){
+      //  return $this->dbh->query($sql, PDO::FETCH_ASSOC);
+
+      try {
+
+        // Prepare statement
+        $localConn = $this->dbh->prepare($sql);
+
+        // execute the query
+        $localConn->execute();
+
+        //Return Parts
+        $lastInsertedID = $this->dbh->lastInsertId();
+        $return = TRUE;
+
+    } catch(PDOException $e) {
+        throw new Exception("SQL: $sql ERROR: ", $e->getMessage() );
+        $return = false;
+    }
+
+    return $return;
+}
+    
+
+    public function deleteParty($sql){
+        return $this->dbh->query($sql, PDO::FETCH_ASSOC);
+    }
 }
 ?>
