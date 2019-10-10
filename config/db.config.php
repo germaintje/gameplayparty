@@ -2,19 +2,25 @@
 
 class Database
 {
-   if($_SERVER['HTTP_HOST'] != "www.gameplayparty.ga") 
+   if($_SERVER['HTTP_HOST'] == "gameplayparty.ga") 
    {
-   // Declare all connection strings
-   private static $db_server = 'localhost';
-   private static $db_name = 'gameplayparty';
-   private static $db_username = 'root';
-   private static $db_pwd = '';
-   }else{
+	   // Declare all connection strings
+	   private static $db_server = 'localhost:3306';
+	   private static $db_name = 'gameplayparty';
+	   private static $db_username = 'gameplay';
+	   private static $db_pwd = 'gameplay';
+   }elseif($_SERVER['HTTP_HOST'] == "www.gameplayparty.ga"){
          // Declare all connection strings
-   private static $db_server = 'localhost:3306';
-   private static $db_name = 'gameplayparty';
-   private static $db_username = 'gameplay';
-   private static $db_pwd = 'gameplay';
+		 private static $db_server = 'localhost:3306';
+		 private static $db_name = 'gameplayparty';
+		 private static $db_username = 'gameplay';
+		 private static $db_pwd = 'gameplay';
+   }else{
+		 // Declare all connection strings
+		 private static $db_server = 'localhost';
+		 private static $db_name = 'gameplayparty';
+		 private static $db_username = 'root';
+	     private static $db_pwd = '';
    }
 
    public static function conn()

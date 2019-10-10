@@ -3,30 +3,25 @@
 include "header.php";
 
 
-if($_SERVER['HTTP_HOST'] != "www.gameplayparty.ga") 
-   {
-    //tijdelijke oplossing party's
-    $connection = mysqli_connect("localhost","root","");
-    $db_select = mysqli_select_db($connection, "gameplayparty");
-
-    $id = $_REQUEST['id'];
-    $sqr = "SELECT * FROM party WHERE b_naam_int = " .  $id  ;
-    $query=mysqli_query($connection, $sqr);
-
-    $rowcount=mysqli_num_rows($query);
-   }
-   else
-   {
+if($_SERVER['HTTP_HOST'] == "gameplayparty.ga"){
     //tijdelijke oplossing party's
     $connection = mysqli_connect("localhost:3306","gameplay","gameplay");
     $db_select = mysqli_select_db($connection, "gameplayparty");
+   }elseif($_SERVER['HTTP_HOST'] == "www.gameplayparty.ga"){
+    //tijdelijke oplossing party's
+    $connection = mysqli_connect("localhost:3306","gameplay","gameplay");
+    $db_select = mysqli_select_db($connection, "gameplayparty");
+   }else{
+    //tijdelijke oplossing party's
+    $connection = mysqli_connect("localhost","root","");
+    $db_select = mysqli_select_db($connection, "gameplayparty");
+   }
 
     $id = $_REQUEST['id'];
     $sqr = "SELECT * FROM party WHERE b_naam_int = " .  $id  ;
     $query=mysqli_query($connection, $sqr);
 
     $rowcount=mysqli_num_rows($query);
-   }
 
 ?>
 
