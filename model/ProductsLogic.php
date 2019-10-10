@@ -222,4 +222,17 @@ class ProductsLogic
         }
     }
 
+    public function updateContact($id){
+        try{
+        $newcontent = $_POST['content'];
+        $sql = "Update about SET content = '$newcontent' WHERE page_id =". $id;
+        $update = $this->DataHandler->updateContact($sql);
+                    
+        $melding = "Pagina is bijgewerkt";
+        return $melding;
+        }catch (Exception $e) {
+            throw $e;
+        }
+    }
+
 }  
