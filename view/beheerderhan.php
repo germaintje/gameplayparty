@@ -80,7 +80,7 @@ button{
         <i class="fas fa-home" style="width: 100%; text-align: center; font-size: 10pc;"></i>
         <!--<img src="view/assets/images/editabout.png" style="width: 100%;">-->
 
-        <a href="index.php?op=edithanneke&id=2"><button type="button" class="btn btn-primary" style="display: block;">Klik om te editen</button></a>
+        <a href="index.php?op=edithanneke&id=2"><button type="button" class="btn btn-primary" style="display: block;">Klik om deze pagina te editen</button></a>
         </div>
       </div>
 
@@ -90,12 +90,53 @@ button{
         <i class="fas fa-users" style="width: 100%; text-align: center; font-size: 10pc;"></i>
         <!--<img src="view/assets/images/editabout.png" style="width: 100%;">-->
 
-        <a href="index.php?op=edithanneke&id=1"><button type="button" class="btn btn-primary" style="display: block;">Klik om te editen</button></a>
+        <a href="index.php?op=edithanneke&id=1"><button type="button" class="btn btn-primary" style="display: block;">Klik om deze pagina te editen</button></a>
         </div>
       </div>
   </div>
+</div>
+	
+<div class="row">
+  <div class="col-12">
+  </div>
+  <div class="col-12 col-xl-8" style="margin: 0 auto;">
+      <div class="col-12 col-xl-6">
+      <div class="pagina">
+        <h4 style="text-align: center;">Gebruiksvoorwaarden</h4>
+        <i class="fas fa-file-alt" style="width: 100%; text-align: center; font-size: 10pc;"></i>
+        <!--<img src="view/assets/images/editabout.png" style="width: 100%;">-->
 
+        <a href="index.php?op=edithanneke&id=3"><button type="button" class="btn btn-primary" style="display: block;">Klik om deze pagina te editen</button></a>
+        </div>
+      </div>
 
+      <div class="col-12 col-xl-6">
+      <div class="pagina">
+        <h4 style="text-align: center;">Privacy beleid</h4>
+        <i class="fas fa-user-lock" style="width: 100%; text-align: center; font-size: 10pc;"></i>
+        <!--<img src="view/assets/images/editabout.png" style="width: 100%;">-->
+
+        <a href="index.php?op=edithanneke&id=4"><button type="button" class="btn btn-primary" style="display: block;">Klik om deze pagina te editenn</button></a>
+        </div>
+      </div>
+  </div>
+</div>
+	<div class="row">
+  <div class="col-12">
+  </div>
+  <div class="col-12 col-xl-8" style="margin: 0 auto;">
+      <div class="col-12 col-xl-6">
+      <div class="pagina">
+        <h4 style="text-align: center;">Cookie beleid</h4>
+        <i class="fas fa-cookie" style="width: 100%; text-align: center; font-size: 10pc;"></i>
+        <!--<img src="view/assets/images/editabout.png" style="width: 100%;">-->
+
+        <a href="index.php?op=edithanneke&id=5"><button type="button" class="btn btn-primary" style="display: block;">Klik om deze pagina te editen</button></a>
+        </div>
+      </div>
+
+     
+  </div>
 </div>
 <?php include 'footer.php'; ?>
 
