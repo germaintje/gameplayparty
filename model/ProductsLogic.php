@@ -7,7 +7,12 @@ class ProductsLogic
 {
     public function __construct()
     {
+        if($_SERVER['HTTP_HOST'] != "www.gameplayparty.ga") 
+   {
         $this->DataHandler = new DataHandler("localhost", "mysql", "gameplayparty", "root", "");
+   }else{
+    $this->DataHandler = new DataHandler("localhost:3306", "mysql", "gameplayparty", "gameplay", "gameplay");
+   }
         $this->Utility = new utility();
     }
 
