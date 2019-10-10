@@ -237,7 +237,7 @@ class ProductsController
 
     public function updateContact($id){
         $update = $this->ProductsLogic->updateContact($id);
-        include 'view/edithanneke.php';
+        include 'view/beheerderhan.php';
     }
 
     public function beheerderhan(){

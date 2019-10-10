@@ -2,7 +2,7 @@
 <?php
 
 //tijdelijke oplossing party's
-$connection = mysqli_connect("localhost","root","");
+$connection = mysqli_connect("localhost:3306","gameplay","gameplay");
 $db_select = mysqli_select_db($connection, "gameplayparty");
 
 $id = $_REQUEST['id'];

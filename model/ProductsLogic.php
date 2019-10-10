@@ -7,7 +7,7 @@ class ProductsLogic
 {
     public function __construct()
     {
-        $this->DataHandler = new DataHandler("localhost", "mysql", "gameplayparty", "root", "");
+        $this->DataHandler = new DataHandler("localhost:3306", "mysql", "gameplayparty", "gameplay", "gameplay");
         $this->Utility = new utility();
     }
 
@@ -221,5 +221,20 @@ class ProductsLogic
             throw $e;
         }
     }
+	
+	public function updateContact($id){
+	try{
+		  $newcontent = $_POST['content'];
+		$sql = "Update about SET content = '$newcontent' WHERE page_id =". $id;
+		 $update = $this->DataHandler->updateContact($sql);
+            
+            $melding = "Pagina is bijgewerkt";
+
+            return $melding;
+	}catch(Exeption $e){
+	
+		}
+		
+	}
 
 }  

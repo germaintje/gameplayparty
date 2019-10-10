@@ -1,6 +1,6 @@
 <?php 
    
-      $connection = mysqli_connect("localhost","root","");
+      $connection = mysqli_connect("localhost:3306","gameplay","gameplay");
       $db_select = mysqli_select_db($connection, "gameplayparty");
 
       $query=mysqli_query($connection, "SELECT * FROM bioscopen");
@@ -47,7 +47,7 @@ include 'header.php';
             ?>
             <div class="carousel-item active">
             <div class="col-12 col-xl-8 rechts">
-                <img src="<?php echo $row["image"]; ?>" alt="tttFirst slide" class="d-block img-fluid" style="width: 100%;">
+                <img src="<?php echo $row["image"]; ?>" alt="tttFirst slide" class="d-block img-fluid" style="width: 100%; max-height:300px;">
               </div>
               <div class="col-12 col-xl-4">
                 <h3><?php echo $row["b_naam"]; ?></h3>
@@ -67,7 +67,7 @@ include 'header.php';
             ?>
             <div class="carousel-item">
             <div class="col-12 col-xl-8 rechts">
-                <img src="<?php echo $row["image"]; ?>" alt="First slide" class="d-block img-fluid" style="width: 100%;">
+                <img src="<?php echo $row["image"]; ?>" alt="First slide" class="d-block img-fluid" style="width: 100%;  max-height:300px;">
               </div>
               <div class="col-12 col-xl-4 ">
                 <h3><?php echo $row["b_naam"]; ?></h3>
