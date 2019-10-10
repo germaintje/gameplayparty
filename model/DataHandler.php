@@ -100,7 +100,7 @@ class DataHandler{
     }
 
     public function collectBeheerderContent($sql){
-        var_dump($sql);
+        //var_dump($sql);
         return $this->dbh->query($sql, PDO::FETCH_ASSOC);
 
     }

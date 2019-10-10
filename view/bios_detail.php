@@ -17,7 +17,7 @@ $image = $content['image'];
 
 
 //tijdelijke oplossing party's
-$connection = mysqli_connect("localhost:3306","gameplay","gameplay");
+$connection = mysqli_connect("localhost","root","");
 $db_select = mysqli_select_db($connection, "gameplayparty");
 
 $id = $_REQUEST['id'];

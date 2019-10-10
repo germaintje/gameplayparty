@@ -1,11 +1,31 @@
 <?php 
-   
+   /*
+      $connection = mysqli_connect("localhost","root","");
+      $db_select = mysqli_select_db($connection, "gameplayparty");
+
+      $query=mysqli_query($connection, "SELECT * FROM bioscopen");
+      $rowcount=mysqli_num_rows($query);
+*/
+
+
+if($_SERVER['HTTP_HOST'] != "www.gameplayparty.ga") 
+   {
+      $connection = mysqli_connect("localhost","root","");
+      $db_select = mysqli_select_db($connection, "gameplayparty");
+
+      $query=mysqli_query($connection, "SELECT * FROM bioscopen");
+      $rowcount=mysqli_num_rows($query);
+	   echo "lokale server";
+   }
+   else
+   {
       $connection = mysqli_connect("localhost:3306","gameplay","gameplay");
       $db_select = mysqli_select_db($connection, "gameplayparty");
 
       $query=mysqli_query($connection, "SELECT * FROM bioscopen");
       $rowcount=mysqli_num_rows($query);
-
+	   echo "online server";
+   }
 
 while ($content = $home->fetch(PDO::FETCH_ASSOC)) {
   $id = $content['page_id'];
