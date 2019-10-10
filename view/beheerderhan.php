@@ -131,7 +131,7 @@ button{
         <i class="fas fa-cookie" style="width: 100%; text-align: center; font-size: 10pc;"></i>
         <!--<img src="view/assets/images/editabout.png" style="width: 100%;">-->
 
-        <a href="index.php?op=edithanneke&id=5"><button type="button" class="btn btn-primary" style="display: block;">Klik om deze pagina te editen</button></a>
+        <a href="index.php?op=edithanneke&id=2"><button type="button" class="btn btn-primary" style="display: block;">Klik om deze pagina te editen</button></a>
         </div>
       </div>
 

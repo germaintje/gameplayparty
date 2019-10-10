@@ -3,10 +3,10 @@
 class Database
 {
    // Declare all connection strings
-   private static $db_server = 'localhost';
+   private static $db_server = 'localhost:3306';
    private static $db_name = 'gameplayparty';
-   private static $db_username = 'root';
-   private static $db_pwd = '';
+   private static $db_username = 'gameplay';
+   private static $db_pwd = 'gameplay';
 
    public static function conn()
    {
