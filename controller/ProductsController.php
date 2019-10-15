@@ -122,8 +122,8 @@ class ProductsController
                     } 
                     break;
                     case 'deleteParty':
-                  //  $id = $_REQUEST['reserveerbeschikbaar_id'];
-                    $this->collectDeleteParty();
+                    $id = $_REQUEST['id'];
+                    $this->collectDeleteParty($id);
                     break;
                 default:
                     $this->collectReadHome();
@@ -268,10 +268,10 @@ class ProductsController
         include 'view/beheerderbiosparty.php';
     }
 
-    public function collectDeleteParty()
+    public function collectDeleteParty($id)
     {
         //echo "Gebruiker is verwijderd";
-       //$id $products = $this->ProductsLogic->deleteParty($id);
+       $result = $this->ProductsLogic->deleteParty($id);
         include 'view/old/delete.php';
 
     }

@@ -153,7 +153,7 @@ class ProductsLogic
 
     }
     
-    public function CreateParty($products/*$beschickbaarheid_id, $titel, $informatie, $begin_tijd, $eind_tijd, $zaal, $dag, $b_naam_int*/)
+    public function CreateParty(/*$beschickbaarheid_id, $titel, $informatie, $begin_tijd, $eind_tijd, $zaal, $dag, $b_naam_int*/)
     {
         try {
             $titel = $_POST['titel'];
@@ -164,7 +164,8 @@ class ProductsLogic
             $dag = $_POST['dag'];
             $b_naam_int = $_POST['b_naam_int'];
             
-            $sql = "INSERT INTO party(`titel`,`informatie`,`begin_tijd`, `eind_tijd` ,`zaal`,'dag','b_naam_int')VALUES( '$titel', '$informatie', '$begin_tijd', '$eind_tijd', '$zaal', '$dag', '$b_naam_int');";
+           
+            $sql = "INSERT INTO party (titel,informatie,begin_tijd, eind_tijd ,zaal,dag,b_naam_int) VALUES ( '$titel', '$informatie', '$begin_tijd', '$eind_tijd', '$zaal', '$dag', '$b_naam_int');";
             echo "test1";
             $result = $this->DataHandler->createData($sql);
             echo "test2";
@@ -222,7 +223,7 @@ class ProductsLogic
 
  public function DeleteParty($id){
         try {
-            $sql = "DELETE FROM party WHERE id =" . $id ;
+            $sql = "DELETE FROM party WHERE reserveerbeschikbaar_id = ' $id'" ;
             $result = $this->DataHandler->deleteData($sql);
             return $result;
         }catch (Exception $e) {
