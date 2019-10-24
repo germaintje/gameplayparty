@@ -61,6 +61,15 @@ session_start();
 
 ?>
 
+<?php
+while ($content = $pages->fetch(PDO::FETCH_ASSOC)) {
+  $page_id = $content['page_id'];
+  $Pagina =  $content['Pagina'];
+  
+  echo $Pagina;
+}
+?>
+
 <style>
 #iframe {
     zoom: 3.00;

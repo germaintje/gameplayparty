@@ -241,6 +241,7 @@ class ProductsController
     }
 
     public function beheerderhan(){
+        $pages = $this->ProductsLogic->beheerderhan();
         include 'view/beheerderhan.php';
     }
 
