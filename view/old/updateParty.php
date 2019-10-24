@@ -2,7 +2,7 @@
 <?php
 
 //tijdelijke oplossing party's
-$connection = mysqli_connect("localhost:3306","gameplay","gameplay");
+$connection = mysqli_connect("localhost","root","");
 $db_select = mysqli_select_db($connection, "gameplayparty");
 
 $id = $_REQUEST['id'];
@@ -23,19 +23,75 @@ $rowcount=mysqli_num_rows($query);
     $b_naam_int = $row['b_naam_int'];
   
     ?>
-<form action="index.php?op=updatePostParty&id=<?php echo $id ?>" class="form" style=" padding: 15px 17px 10px 65px;" method="POST">
-    <legend>update uw PARTY</legend>
-    <label>Id: </label><input type="text" value="<?php echo $party_id?>" name="reserveerbeschikbaar_id">
-    <label>titel: </label><input type="text" value="<?php echo $titelparty?>" name="titel">
-    <label>informatie: </label><input type="text" value="<?php echo $informatie_party?>" name="informatie">
-    <label>begin tijd: </label><input type="time" value="<?php echo $begintijd_party?>" id="appt" name="begin_tijd"
-       min="09:00" max="18:00" name="begin_tijd">
-    <label>eind tijd: </label><input type="time" value="<?php echo $eindtijd_party?>" id="appt" name="eind_tijd"
-       min="09:00" max="18:00" name="eind_tijd">
-    <label>zaal: </label><input type="text" name="zaal" value="<?php echo $zaal_party?>">
-    <label>dag: </label><input type="date" name="dag" value="<?php echo $dag_party?>">
-    <input type="hidden" name="b_naam_int" value="<?php echo $b_naam_int?>">
-    <button type="submit" name="submit">submit</button>
-</form>
+<form class="form-horizontal" action="index.php?op=updatePostParty&id=<?php echo $id ?>" method="POST">
+<fieldset>
 
+<!-- Form Name -->
+<legend>update feestje</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">id</label>  
+  <div class="col-md-4">
+  <input id="textinput"  name="reserveerbeschikbaar_id" type="text" placeholder="placeholder" class="form-control input-md" >  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">titel</label>  
+  <div class="col-md-4">
+  <input id="textinput"    name="titel" placeholder="placeholder" class="form-control input-md">
+ 
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textarea">informatie</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="textarea" name="informatie">default text</textarea>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">begin tijd</label>  
+  <div class="col-md-4">
+  <input id="textinput" type="time" id="appt" name="begin_tijd"
+       min="09:00" max="18:00">
+ 
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">eind tijd</label>  
+  <div class="col-md-4">
+  <input id="textinput" type="time"  id="appt" name="eind_tijd"
+       min="09:00" max="18:00">
+ 
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">zaal</label>  
+  <div class="col-md-4">
+  <input id="textinput"   name="zaal" placeholder="placeholder" class="form-control input-md">
+ 
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">datum</label>  
+  <div class="col-md-4">
+  <input id="textinput"   type="date" name="dag" placeholder="placeholder" class="form-control input-md">
+  <br><br>
+  <button id="button1id"type="submit" name="submit"class="btn btn-success">sla op</button>
+  </div>
+</div>
+<div class="form-group">
+<div class="col-md-4">
+ <input type="hidden" name="b_naam_int" >
+
+ </div>
+</div>
+
+</fieldset>
+</form>
 <?php include 'footer.php'; ?>
