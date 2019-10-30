@@ -1,9 +1,13 @@
 <?php include 'header.php'; ?>
+<button type="button" class="btn btn-primary"><a href="index.php?op=beheerderbios" class="textcolor" style="color:white;">ga terug naar bioscopen</a></button>
+<style>
+
+</style>
 <form class="form-horizontal" action="index.php?op=CreatePostParty" method="POST">
 <fieldset>
 
 <!-- Form Name -->
-<legend>maak feestje</legend>
+
 
 <!-- Text input-->
 <div class="form-group">
