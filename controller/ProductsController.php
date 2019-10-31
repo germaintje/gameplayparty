@@ -125,6 +125,12 @@ class ProductsController
                     $id = $_REQUEST['id'];
                     $this->collectDeleteParty($id);
                     break;
+                    case "reserveerForm":
+                    $this->reserveerForm();
+                    break;
+                    case "reservering":
+                    $this->reservering();
+                    break;
                 default:
                     $this->collectReadHome();
 
@@ -274,5 +280,16 @@ class ProductsController
        $result = $this->ProductsLogic->deleteParty($id);
         include 'view/old/delete.php';
 
+    }
+
+    public function reserveerForm(){
+        $data = $this->ProductsLogic->reserveerData();
+
+        include "view/reserveer_form.php";
+    }
+
+    public function reservering(){
+        $result = $this->ProductsLogic->reservering();
+        include "view/factuur.php";
     }
 }

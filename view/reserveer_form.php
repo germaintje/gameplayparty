@@ -13,7 +13,7 @@ include "view/header.php";
       <div class="container">
          <div class="row">
             <div class="col-md-6 col-md-offset-3" style="margin: 0 auto;">
-               <form action="" method="POST">
+               <form action="index.php?op=reservering" method="POST">
                   <div class="panel panel-default">
                      <div class="panel-heading">
                         <h2 class="text-center">Contact gegevens invullen</h2>
@@ -25,7 +25,7 @@ include "view/header.php";
                         </div>
                         <div class="form-group">
                            <label for="Name">Voornaam:</label>
-                           <input type="text" name="voornaam">
+                           <input class="form-control" type="text" name="voornaam">
                         </div>
                         <div class="form-group">
                            <label for="Name">Achternaam:</label>
@@ -81,7 +81,7 @@ include "view/header.php";
                         </div>
 
                      <div class="panel-footer">
-                        <button type="submit" name="login" class="btn btn-primary pull-right">
+                        <button type="submit" name="submit" class="btn btn-primary pull-right">
                            <span class="glyphicon glyphicon-user"></span> Reserveer
                         </button>
                         <div class="clearfix"></div>

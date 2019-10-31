@@ -146,6 +146,8 @@
   }
 </style>
 </head>
+
+
 <body>
   <div class="container">
     <div class="header"></div>
@@ -158,11 +160,16 @@
         UTRECHT
       </div>
       <div class="col-7">
-        <h4>Mevr. L. Jansen</h4>
-        Norberto Crossing 67<br>
-        1107 BC  AMSTERDAM<br>
-        NOORD-HOLLAND<br>
-        Tel.:06-55477806    
+        <h4> 
+          <?php
+        echo $_POST['geslacht']. ". "; 
+        echo $_POST['voornaam'];
+        echo " ";
+        echo $_POST['achternaam'];
+       ?></h4>
+        <?php echo $_POST['straat']; ?><br>
+        <?php echo $_POST['provincie']; ?><br>
+        Tel: <?php echo $_POST['telefoonnummer']; ?>    
       </div>
       <div class="col-5">
         <div class="row">

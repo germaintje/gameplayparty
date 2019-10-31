@@ -245,7 +245,39 @@ class ProductsLogic
 
 		}
 		
-	}
+    }
+    
+    public function reserveerData(){
+        try{
+ 
+        if ( isset( $_POST['submit']) ) {
+
+        $aanhef = $_POST['aanhef'];
+        $voornaam = $_POST['voornaam'];
+        $achternaam = $_POST['achternaam'];
+        $straat = $_POST['straat'];
+        $huisnummer = $_POST['huisnummer'];
+        $provincie = $_POST['provincie'];
+        $telefoonnummer = $_POST['telefoonnummer'];
+        $kinderen = $_POST['kinderen'];
+
+
+      
+        }
+
+        }catch(Exeption $e){
+            throw $e;
+        }
+
+    }
+
+    public function reservering(){
+        try{
+            //echo $voornaam;
+        }catch(Exeption $e){
+            throw $e;
+        }
+    }
 
 
 
