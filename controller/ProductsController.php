@@ -104,7 +104,7 @@ class ProductsController
                  
                 break;
                 case 'CreatePostParty':
-               
+            
                 if (isset($_POST['submit'])) {
                     $this->CreatePostParty();
                 } 
@@ -113,7 +113,7 @@ class ProductsController
               
                         $id = $_REQUEST['id'];
                      return   $this->collectUpdateParty($id);
-                    
+                
                     break;
                     case 'updatePostParty':
                     $id = $_REQUEST['id'];
@@ -125,14 +125,9 @@ class ProductsController
                     $id = $_REQUEST['id'];
                     $this->collectDeleteParty($id);
                     break;
-                    case "reserveerForm":
-                    $this->reserveerForm();
-                    break;
-                    case "reservering":
-                    $this->reservering();
-                    break;
-                    default:
+                default:
                     $this->collectReadHome();
+
                     break;
             }
            
@@ -246,7 +241,6 @@ class ProductsController
     }
 
     public function beheerderhan(){
-        $pages = $this->ProductsLogic->beheerderhan();
         include 'view/beheerderhan.php';
     }
 
@@ -259,7 +253,7 @@ class ProductsController
     
     public function CreatePostParty(){
         $place = $this->ProductsLogic->CreateParty();
-        include 'view/beheerderbiosparty.php';
+        include 'view/old/createParty.php';
     }
     
     public function collectUpdateparty($id)
@@ -280,14 +274,5 @@ class ProductsController
        $result = $this->ProductsLogic->deleteParty($id);
         include 'view/old/delete.php';
 
-    }
-
-    public function reserveerForm(){
-        include "view/reserveer_form.php";
-    }
-
-    public function reservering(){
-        //$result = $this->ProductsLogic->reservering();
-        include "view/factuur.php";
     }
 }

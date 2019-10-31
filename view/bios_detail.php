@@ -176,7 +176,7 @@ for($i=1;$i<=$rowcount;$i++)
       <p class="info_party"><?php echo $informatie_party ?></p>
       <p>Begin tijd:</p><h6 class="tijd_party"><?php echo date("G:i", strtotime($begintijd_party)) ?></h6>
       <p>Eind tijd:</p><h6 class="tijd_party"><?php echo date("G:i", strtotime($eindtijd_party)) ?></h6>
-      <a href="index.php?op=reserveerForm"><button type="button" class="btn btn-info ">Reserveer binnenkort</button></a>
+      <button type="button" class="btn btn-info disabled">Reserveer binnenkort</button>
     </div>
   <?php
 }

@@ -141,9 +141,5 @@ class DataHandler{
     public function deleteParty($sql){
         return $this->dbh->query($sql, PDO::FETCH_ASSOC);
     }
-
-    public function beheerderhan($sql){
-        return $this->dbh->query($sql, PDO::FETCH_ASSOC);
-    }
 }
 ?>

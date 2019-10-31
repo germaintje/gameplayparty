@@ -245,17 +245,7 @@ class ProductsLogic
 
 		}
 		
-    }
-    
-    public function beheerderhan(){
-        try{
-            $sql = "SELECT * FROM about";
-            $pages = $this->Datahandler->beheerderhan($sql);
-            return $pages;
-        }catch(Exeption $e){
-            throw $e;
-        }
-    }
+	}
 
 
 
