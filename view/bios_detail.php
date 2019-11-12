@@ -171,12 +171,15 @@ for($i=1;$i<=$rowcount;$i++)
 ?>
   <div class="col event">
       <p class="datum_party"><?php echo $dag. " " .date("d", strtotime($dag_party)). " " .$maand ?></p> 
-     
       <h2 class="title_party"><?php echo $titelparty ?></h2>
       <p class="info_party"><?php echo $informatie_party ?></p>
       <p>Begin tijd:</p><h6 class="tijd_party"><?php echo date("G:i", strtotime($begintijd_party)) ?></h6>
       <p>Eind tijd:</p><h6 class="tijd_party"><?php echo date("G:i", strtotime($eindtijd_party)) ?></h6>
-      <a href="index.php?op=reserveerForm"><button type="button" class="btn btn-info ">Reserveer binnenkort</button></a>    </div>
+
+        <h5><?php echo $vandaag = date("d F Y"); ?></h5>
+        <?php $date = $dag. " " .date("d", strtotime($dag_party)). " " .$maand; ?>
+      
+      <a href="index.php?op=reserveerForm&date=<?php echo $date; ?>&vandaag=<?php echo $vandaag;?>"><button type="button" class="btn btn-info ">Reserveer binnenkort</button></a>    </div>
   <?php
 }
 ?>

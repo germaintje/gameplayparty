@@ -166,6 +166,7 @@
         echo $_POST['voornaam'];
         echo " ";
         echo $_POST['achternaam'];
+        
        ?></h4>
         <?php echo $_POST['straat']; ?><br>
         <?php echo $_POST['provincie']; ?><br>
@@ -182,30 +183,33 @@
           </div>
           <div class="col-6 bob">
             <strong>GPP-08009</strong><br>
-            28 september, 2018<br>
-            14 oktober, 2018<br>
+            <?php echo $_GET['vandaag']; ?><br>
+            <?php echo $_GET['date']; ?><br> 
             12:15 - 13:45<br>
             €163,35<br><br>
           </div>
         </div>
       </div>
+      <?php $kinderen = $_POST['kinderen']; ?> 
       <div class="col-4 odd"><strong>Dienst</strong></div>
       <div class="col-3 odd"><strong>Tarief</strong></div>
       <div class="col-5 odd"><strong>Bedrag</strong></div>
-      <div class="col-4 bob"><strong>Kids GamePlayParty</strong><br>Vrijdag 14 oktober, 2018</div>
-      <div class="col-3 bob"><strong>Kinderen t/m 11 jaar:</strong> 8 @ €20,00</div>
-      <div class="col-5 bob">€160,00<br><br></div>
-      <div class="col-4 bob"><strong>Laser ULTRA</strong><br>Vrijdag 14 oktober, 2018</div>
-      <div class="col-3 bob"><strong>Toeslag:</strong> 8 @ €2,50<br><br></div>
-      <div class="col-5 bob">€ 20,00<br><br></div>
+      <div class="col-4 bob"><strong>Kids GamePlayParty</strong><br><?php  echo $_GET['date']; ?></div>
+
+      <?php echo $_POST['kinderen'];  ?>
+      <div class="col-3 bob"><strong>Kinderen t/m 11 jaar:</strong> <?php echo $kinderen;  ?> @ €20,00</div>
+      <div class="col-5 bob">€<?php echo(round($ticketprijs = $kinderen * 20, 2)); ?><br><br></div>
+      <div class="col-4 bob"><strong>Laser ULTRA</strong><br><?php  echo $_GET['date']; ?></div>
+      <div class="col-3 bob"><strong>Toeslag:</strong> <?php echo $kinderen;  ?> @ €2,50<br><br></div>
+      <div class="col-5 bob">€<?php echo $toeslagprijs = $kinderen * 2.50 ?><br><br></div>
       <div class="col-7 ral"><strong>Subtotaal:</strong></div>
-      <div class="col-5">€180,00</div>
+      <div class="col-5">€<?php echo $subtotaal = $ticketprijs + $toeslagprijs; ?></div>
       <div class="col-7 ral"><strong>BTW 21%:</strong></div>
-      <div class="col-5">€ 37,80</div>
+      <div class="col-5">€<?php echo(round($btw = $subtotaal / 21, 2));  ?></div>
       <div class="col-7 ral"><strong>Totaal:</strong></div>
-      <div class="col-5">€217,80</div>
+      <div class="col-5">€<?php echo(round($totaal = $subtotaal + $btw, 2));  ?></div>
       <div class="col-7 ral bob"><strong>Reeds voldaan:</strong></div>
-      <div class="col-5 bob">€ 54,45</div>
+      <div class="col-5 bob">€ 00,00</div>
       <div class="col-7 ral"><strong>Nog te voldoen (75%):</strong></div>
       <div class="col-5 hil"><strong>€163,35</strong></div>
       <div class="col-12"><strong>Betalingen: </strong>14-10-2018 <strong>€ 54,45 </strong>(MasterCard 1243)</div>
