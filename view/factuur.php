@@ -196,7 +196,6 @@
       <div class="col-5 odd"><strong>Bedrag</strong></div>
       <div class="col-4 bob"><strong>Kids GamePlayParty</strong><br><?php  echo $_GET['date']; ?></div>
 
-      <?php echo $_POST['kinderen'];  ?>
       <div class="col-3 bob"><strong>Kinderen t/m 11 jaar:</strong> <?php echo $kinderen;  ?> @ €20,00</div>
       <div class="col-5 bob">€<?php echo(round($ticketprijs = $kinderen * 20, 2)); ?><br><br></div>
       <div class="col-4 bob"><strong>Laser ULTRA</strong><br><?php  echo $_GET['date']; ?></div>
