@@ -1,9 +1,20 @@
 <?php include 'header.php'; ?>
 <?php
 
-//tijdelijke oplossing party's
-$connection = mysqli_connect("localhost","root","");
-$db_select = mysqli_select_db($connection, "gameplayparty");
+if($_SERVER['HTTP_HOST'] == "gameplayparty.ga"){
+  //tijdelijke oplossing party's
+  $connection = mysqli_connect("localhost:3306","gameplay","gameplay");
+  $db_select = mysqli_select_db($connection, "gameplayparty");
+ }elseif($_SERVER['HTTP_HOST'] == "www.gameplayparty.ga"){
+  //tijdelijke oplossing party's
+  $connection = mysqli_connect("localhost:3306","gameplay","gameplay");
+  $db_select = mysqli_select_db($connection, "gameplayparty");
+ }else{
+  //tijdelijke oplossing party's
+  $connection = mysqli_connect("localhost","root","");
+  $db_select = mysqli_select_db($connection, "gameplayparty");
+ }
+
 
 $id = $_REQUEST['id'];
 $sqr = "SELECT * FROM party WHERE reserveerbeschikbaar_id =". $id  ;
@@ -23,7 +34,7 @@ $rowcount=mysqli_num_rows($query);
     $b_naam_int = $row['b_naam_int'];
   
     ?>
-<form class="form-horizontal" action="index.php?op=updatePostParty&id=<?php echo $id ?>" method="POST">
+<form class="form-horizontal" action="index.php?op=updatePostParty&id=<?php echo $id ?>" method="POST" class="col-md-6 col-md-offset-3">
 <fieldset>
 
 <!-- Form Name -->
@@ -31,16 +42,16 @@ $rowcount=mysqli_num_rows($query);
 
 <!-- Text input-->
 <div class="form-group">
- 
-  <div class="col-md-4">
+<label class="col-md-6 col-md-offset-3" for="textinput"></label> 
+  <div class="col-md-6 col-md-offset-3">
   <input id="textinput"  name="reserveerbeschikbaar_id" type="hidden" value="<?php echo $party_id?>" class="form-control input-md" >  
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">titel</label>  
-  <div class="col-md-4">
+  <label class="col-md-6 col-md-offset-3" for="textinput">titel</label>  
+  <div class="col-md-6 col-md-offset-3">
   <input id="textinput"    name="titel" value="<?php echo $titelparty?>" class="form-control input-md">
  
   </div>
@@ -48,45 +59,45 @@ $rowcount=mysqli_num_rows($query);
 
 <!-- Textarea -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">informatie</label>
-  <div class="col-md-4">                     
+  <label class="col-md-6 col-md-offset-3" for="textarea">informatie</label>
+  <div class="col-md-6 col-md-offset-3">                     
     <input class="form-control" id="textarea" name="informatie" value="<?php echo $informatie_party?>" ></textarea>
   </div>
 </div>
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">begin tijd</label>  
-  <div class="col-md-4">
+  <label class="col-md-6 col-md-offset-3" for="textinput">begin tijd</label>  
+  <div class="col-md-6 col-md-offset-3">
   <input id="textinput" type="time" id="appt" name="begin_tijd"
        min="09:00" max="18:00" value="<?php echo $begintijd_party?>">
  
   </div>
 </div>
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">eind tijd</label>  
-  <div class="col-md-4">
+  <label class="col-md-6 col-md-offset-3" for="textinput">eind tijd</label>  
+  <div class="col-md-6 col-md-offset-3">
   <input id="textinput" type="time"  id="appt" name="eind_tijd"
        min="09:00" max="18:00" value="<?php echo $eindtijd_party?>">
  
   </div>
 </div>
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">zaal</label>  
-  <div class="col-md-4">
+  <label class="col-md-6 col-md-offset-3" for="textinput">zaal</label>  
+  <div class="col-md-6 col-md-offset-3">
   <input id="textinput"   name="zaal" placeholder="placeholder" class="form-control input-md" value="<?php echo $zaal_party?>">
  
   </div>
 </div>
 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">datum</label>  
-  <div class="col-md-4">
+  <label class="col-md-6 col-md-offset-3" for="textinput">datum</label>  
+  <div class="col-md-6 col-md-offset-3">
   <input id="textinput"   type="date" name="dag" value="<?php echo $dag_party ?>" class="form-control input-md">
   <br><br>
   <button id="button1id"type="submit" name="submit"class="btn btn-success">sla op</button>
   </div>
 </div>
 <div class="form-group">
-<div class="col-md-4">
+<div class="col-md-6 col-md-offset-3">
  <input type="hidden" name="b_naam_int" >
 
  </div>
