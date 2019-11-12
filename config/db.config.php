@@ -2,11 +2,19 @@
 
 class Database
 {
-   // Declare all connection strings
-   private static $db_server = '127.0.0.1';
-   private static $db_name = 'gameplayparty';
-   private static $db_username = 'root';
-   private static $db_pwd = '';
+  function __construct()
+   {
+     
+       if($_SERVER['HTTP_HOST'] == "gameplayparty.ga"){
+             $this->DataHandler = new DataHandler("localhost:3306", "mysql", "gameplayparty", "gameplay", "gameplay");
+           }elseif($_SERVER['HTTP_HOST'] == "www.gameplayparty.ga"){
+              $this->DataHandler = new DataHandler("localhost:3306", "mysql", "gameplayparty", "gameplay", "gameplay");
+        }else{
+               $this->DataHandler = new DataHandler("localhost", "mysql", "gameplayparty", "root", "");
+           }
+ 
+   }
+
 
    public static function conn()
    {
